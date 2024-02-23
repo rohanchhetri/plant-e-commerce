@@ -10,6 +10,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
     </style>
@@ -50,12 +56,70 @@
         <div class="text-section">
           <p class="text-head">Find perfect plants for you home</p>
           <p>Beautiful plants that encourage your to get creative</p>
-          <button class="shop-now">SHOP NOW</button>
+          <button class="btn shop-now">SHOP NOW</button>
         </div>
         <div class="image-section">
-          <img src="/src/interior-plant.jpg" alt="" width="100%" />
+          <img src="/src/main-section-img.webp" alt="" width="100%" />
+        </div>
+      </div>
+      <p class="sub-head">Categories</p>
+      <div class="plant-categories"></div>
+      <p class="sub-head">
+        Love and work are to people what water and sunshine are to plants
+      </p>
+      <div class="blog-section">
+        <div class="blog" id="blog-1" style="height: 250px">
+          <img src="/src/interior-plant.jpg" alt="" height="80%" width="100%" />
+          <p>
+            How to water your freaking plants so they don't die afrer one week
+          </p>
+        </div>
+        <div class="blog" id="blog-1" style="height: 250px">
+          <img src="/src/interior-plant.jpg" alt="" height="80%" width="100%" />
+          <p>
+            How to water your freaking plants so they don't die afrer one week
+          </p>
         </div>
       </div>
     </main>
+    <script>
+      let categories = [
+        {
+          type: "Jungle Plants",
+          url: "/src/jungle-plant.jpg",
+          alt: "Jungle plants categories",
+          id: "jungle-plant",
+        },
+        {
+          type: "Outdoor Plants",
+          url: "/src/outdoor-plant.webp",
+          alt: "Outdoor plants categories",
+          id: "outdoor-plant",
+        },
+        {
+          type: "Bedroom Plants",
+          url: "/src/bedroom-plant.jpg",
+          alt: "Bedroom plants categories",
+          id: "bedroom-plant",
+        },
+        {
+          type: "Indoor Plants",
+          url: "/src/indoor-plant.jpg",
+          alt: "Indoor plants categories",
+          id: "indoor-plant",
+        },
+      ];
+      $(document).ready(function () {
+        let categoriesList = $(".plant-categories");
+
+        for (let i = 0; i < categories.length; i++) {
+          categoriesList.append(`
+          <div class= "categories-list" id = "${categories[i].id}">
+            <img src = "${categories[i].url}" alt = "${categories[i].alt} class = "cat-img" />
+            <p class = "cat-title">${categories[i].type}</p>
+            </div>`);
+        }
+      });
+    </script>
   </body>
 </html>
