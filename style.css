@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,8 +11,8 @@ body {
   font-size: 1.2em;
   margin: 0 3em;
 }
-.header {
-}
+/* .header {
+} */
 
 .navbar {
   display: flex;
@@ -136,3 +138,5 @@ body {
     height: 40px;
   }
 }
+
+/* css for sign_in page */
