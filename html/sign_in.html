@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -14,91 +15,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
-      * {
-        color: white;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Playfair Display", serif;
-        background-image: url("/src/login-bg.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-      }
-      input {
-        padding: 0.8em;
-        margin: 5px;
-        border: none;
-        color: black;
-        border-radius: 0.5em;
-      }
-      form {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-
-        height: 100vh;
-      }
-      .form {
-        background-color: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 0.5em;
-        backdrop-filter: blur(5px);
-        height: auto;
-        width: 350px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 3.5em;
-      }
-      h2 {
-        font-size: 2em;
-      }
-      .input > input {
-        width: 90%;
-        font-size: 16px;
-      }
-      #user,
-      #pw {
-        margin-left: -12px;
-      }
-      #btn {
-        width: 100%;
-        margin-left: -5px;
-      }
-      .icon {
-        height: fit-content;
-        margin-left: -35px;
-      }
-      i {
-        width: 20px;
-      }
-      .access {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .register-btn {
-        font-weight: 600;
-        text-decoration: underline;
-      }
-      #login-btn {
-        padding: 0.7em;
-      }
-      .register-btn:hover {
-        cursor: pointer;
-      }
-    </style>
+    <script src="/js/validation.js"></script>
   </head>
   <body>
-    <form class="login-form" action="index.html">
-      <div class="form">
+    <form class="form" action="index.html">
+      <div class="signin-form">
+        <span id="success"></span>
+        <div class="login-logo">
+          <img src="/src/logoclear.png" alt="" />
+        </div>
         <h2>Login</h2>
         <div class="input" id="user">
           <input
@@ -118,8 +43,11 @@
             placeholder="Password"
             required
           />
-          <span class="icon" id="show-pw" onclick="showPassword()"
-            ><i class="fa-solid fa-eye" id="password" style="color: #000000"></i
+          <span
+            class="icon"
+            id="pw-1"
+            onclick="showPassword('signin-password','pw-1')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
           ></span>
         </div>
         <div class="access">
@@ -129,7 +57,7 @@
           </span>
           <p>Forgot password?</p>
         </div>
-        <div class="input" id="btn">
+        <div class="input input-btn">
           <input
             type="submit"
             id="login-btn"
@@ -137,21 +65,15 @@
             style="width: 100%"
           />
         </div>
+        <hr />
         <p>
           Don't have an account?
-          <span class="register-btn" onclick="">Register</span>
+          <span class="register-btn" onclick="goToPage('sign_up.html')"
+            >Register</span
+          >
         </p>
       </div>
     </form>
-    <script>
-      showPassword = () => {
-        let passwordInput = $("#signin-password");
-        if (passwordInput.prop("type") === "password") {
-          passwordInput.prop("type", "text");
-        } else {
-          passwordInput.prop("type", "password");
-        }
-      };
-    </script>
+    <script></script>
   </body>
 </html>
