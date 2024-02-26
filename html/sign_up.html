@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/validation.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <form class="form" id="register-form" action="sign_in.html">
+      <div class="signup-form">
+        <div class="login-logo">
+          <img src="/src/logoclear.png" alt="" />
+        </div>
+        <h2>Register</h2>
+        <div class="input" id="email">
+          <input type="email" id="signup-email" placeholder="Email" required />
+          <span class="icon"
+            ><i class="fa-regular fa-envelope" style="color: #000000"></i></span
+          ><br />
+        </div>
+        <div class="input" id="user">
+          <input
+            type="text"
+            id="signup-username"
+            placeholder="Username"
+            required
+          />
+          <span class="icon"
+            ><i class="fa-regular fa-user" style="color: #000000"></i
+          ></span>
+        </div>
+        <div class="input" id="signup-pw">
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Password"
+            required
+          />
+          <span
+            class="icon"
+            id="pw-2"
+            onclick="showPassword('signup-password','pw-2')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <div class="error">
+            <span class="condition-1"
+              >*Password must be between 8 to 24 characters</span
+            ><span class="condition-2"
+              >*Password must include at least a capital letter
+            </span>
+            <span class="condition-3"
+              >*Password must include at least a number</span
+            >
+          </div>
+        </div>
+        <div class="input" id="confirm-pw">
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            required
+          />
+          <span
+            class="icon"
+            id="pw-3"
+            onclick="showPassword('confirm-password',
+          'pw-3')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <span class="error" id="error-msg"></span>
+        </div>
+        <div class="input input-btn">
+          <input
+            type="submit"
+            id="login-btn"
+            value="Register"
+            onclick="submissionHandler(event)"
+          />
+        </div>
+        <hr />
+        <p>
+          Already have an account?
+          <span class="register-btn" onclick="goToPage('sign_in.html')"
+            >Login</span
+          >
+        </p>
+      </div>
+    </form>
+  </body>
+</html>
