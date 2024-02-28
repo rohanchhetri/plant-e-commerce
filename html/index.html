@@ -16,6 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="/js/validation.js"></script>
     <style></style>
   </head>
   <body>
@@ -38,11 +39,26 @@
         </div>
         <div class="nav-content-2">
           <ul>
-            <li><input type="text" /> Search</li>
             <li>
-              Cart
+              <input type="text" style="padding: 5px 30px 5px 5px" />
+              <span style="margin-left: -27px"
+                ><i
+                  class="fa-solid fa-magnifying-glass"
+                  style="color: #b8cf69"
+                ></i
+              ></span>
+            </li>
+            <li>
               <span
-                ><i class="fa-solid fa-cart-shopping" style="color: #000000"></i
+                ><i class="fa-solid fa-cart-shopping" style="color: #336622"></i
+              ></span>
+            </li>
+            <li>
+              <span onclick="goToPage('sign_in.html')"
+                ><i
+                  class="fa-solid fa-arrow-right-from-bracket"
+                  style="color: #336622"
+                ></i
               ></span>
             </li>
           </ul>

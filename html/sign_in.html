@@ -9,28 +9,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="/js/validation.js"></script>
   </head>
   <body>
-    <form class="form" action="index.html">
+    <form class="form" id="signin-form" action="index.html">
       <div class="signin-form">
-        <span id="success"></span>
         <div class="login-logo">
           <img src="/src/logoclear.png" alt="" />
         </div>
+
         <h2>Login</h2>
         <div class="input" id="user">
           <input
             type="text"
+            class="user-input"
             id="signin-username"
             placeholder="Username"
             required
+            oninput="changeInputBorder('none','signin-username')"
           />
           <span class="icon"
             ><i class="fa-regular fa-user" style="color: #000000"></i
@@ -39,9 +34,11 @@
         <div class="input" id="pw">
           <input
             type="password"
+            class="user-input"
             id="signin-password"
             placeholder="Password"
             required
+            oninput="changeInputBorder('none','signin-password')"
           />
           <span
             class="icon"
@@ -49,6 +46,7 @@
             onclick="showPassword('signin-password','pw-1')"
             ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
           ></span>
+          <span class="error" id="login-error"></span>
         </div>
         <div class="access">
           <span>
@@ -63,6 +61,7 @@
             id="login-btn"
             value="Login"
             style="width: 100%"
+            onclick="getCredential(event)"
           />
         </div>
         <hr />
@@ -74,6 +73,7 @@
         </p>
       </div>
     </form>
-    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/validation.js"></script>
   </body>
 </html>

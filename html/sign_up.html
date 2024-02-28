@@ -9,24 +9,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="/js/validation.js"></script>
     <style></style>
   </head>
   <body>
-    <form class="form" id="register-form" action="sign_in.html">
+    <form class="form" id="register-form" action="sign_in.html?success=true">
       <div class="signup-form">
         <div class="login-logo">
           <img src="/src/logoclear.png" alt="" />
         </div>
         <h2>Register</h2>
         <div class="input" id="email">
-          <input type="email" id="signup-email" placeholder="Email" required />
+          <input
+            type="email"
+            class="user-input"
+            id="signup-email"
+            placeholder="Email"
+            required
+          />
           <span class="icon"
             ><i class="fa-regular fa-envelope" style="color: #000000"></i></span
           ><br />
@@ -34,8 +33,11 @@
         <div class="input" id="user">
           <input
             type="text"
+            class="user-input"
             id="signup-username"
             placeholder="Username"
+            minlength="5"
+            maxlength="32"
             required
           />
           <span class="icon"
@@ -45,6 +47,7 @@
         <div class="input" id="signup-pw">
           <input
             type="password"
+            class="user-input"
             id="signup-password"
             placeholder="Password"
             required
@@ -55,13 +58,13 @@
             onclick="showPassword('signup-password','pw-2')"
             ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
           ></span>
-          <div class="error">
-            <span class="condition-1"
+          <div class="error" id="conditions">
+            <span class="condition" id="error1"
               >*Password must be between 8 to 24 characters</span
-            ><span class="condition-2"
+            ><span class="condition" id="error2"
               >*Password must include at least a capital letter
             </span>
-            <span class="condition-3"
+            <span class="condition" id="error3"
               >*Password must include at least a number</span
             >
           </div>
@@ -69,6 +72,7 @@
         <div class="input" id="confirm-pw">
           <input
             type="password"
+            class="user-input"
             id="confirm-password"
             placeholder="Confirm Password"
             required
@@ -80,7 +84,7 @@
           'pw-3')"
             ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
           ></span>
-          <span class="error" id="error-msg"></span>
+          <span class="error" id="register-error"></span>
         </div>
         <div class="input input-btn">
           <input
@@ -99,5 +103,7 @@
         </p>
       </div>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/validation.js"></script>
   </body>
 </html>

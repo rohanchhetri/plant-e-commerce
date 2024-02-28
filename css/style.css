@@ -57,6 +57,11 @@ body {
 .main-content > .text-section {
   flex: 1;
   text-align: left;
+  display: flex;
+  padding-right: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 .text-section > p,
 .text-section > button {
