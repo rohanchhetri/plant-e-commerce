@@ -1,3 +1,14 @@
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* For Chrome, Safari, and Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /* combined css for sign_in && sign_up pages */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
 
@@ -30,7 +41,8 @@ input {
   height: 100vh;
 }
 .signup-form,
-.signin-form {
+.signin-form,
+.reset-form {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 0.5em;
@@ -65,7 +77,8 @@ hr {
   outline: none;
 }
 .signup-form > :nth-child(n + 3):nth-child(-n + 6),
-.signin-form > :nth-child(n + 3):nth-child(-n + 4) {
+.signin-form > :nth-child(n + 3):nth-child(-n + 4),
+.reset-form > :nth-child(n + 3):nth-child(-n + 5) {
   margin-left: -12px;
 }
 .input-btn {
@@ -83,14 +96,19 @@ i {
   font-weight: 600;
   text-decoration: underline;
 }
-#login-btn {
+#login-btn,
+#reset-btn {
   background: #336622;
   color: white;
   font-weight: 600;
   padding: 0.7em;
   width: 100%;
 }
-.register-btn:hover {
+.register-btn:hover,
+button:hover {
+  cursor: pointer;
+}
+input[type="submit"]:hover {
   cursor: pointer;
 }
 h2 {
@@ -106,12 +124,19 @@ h2 {
   margin: 5px;
   padding-left: 0.5em;
   font-size: 15px;
-  display: flex;
   flex-direction: column;
   align-items: start;
+  display: flex;
+}
+#conditions {
+  display: none;
+}
+.contitions {
+  display: none;
 }
 
 #login-error,
-#register-error {
+#register-error,
+#reset-error {
   text-decoration: underline;
 }

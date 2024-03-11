@@ -48,6 +48,42 @@ let passwordValidation = () => {
   }
 };
 
+// function to check if password requirements are met
+let validPassword = () => {
+  let signupPassword = $(`#signup-password`).val();
+  if (!(signupPassword.length >= 8 && signupPassword.length <= 24)) {
+    showError("error1");
+    showError("conditions");
+    errorMessage("error1", "*Password must be 8 to 24 chaacters");
+  } else {
+    hideError("error1");
+    hideError("conditions");
+  }
+  if (!/\d/.test(signupPassword)) {
+    showError("error2");
+    showError("conditions");
+    errorMessage("error2", "*Password must include atleast one number");
+  } else {
+    hideError("error2");
+  }
+  if (!/[A-Z]/.test(signupPassword)) {
+    showError("error3");
+    showError("conditions");
+    errorMessage(
+      "error3",
+      "*Password must include atleast one uppercase letter"
+    );
+  } else {
+    hideError("error3");
+  }
+  function hideError(id) {
+    $(`#${id}`).css("display", "none");
+  }
+  function showError(id) {
+    $(`#${id}`).css("display", "flex");
+  }
+};
+
 // function to check if password and confirm password are same
 let passwordConfirmation = (event) => {
   if ($(`#signup-password`).val() === $(`#confirm-password`).val()) {
@@ -118,5 +154,51 @@ let getCredential = (event) => {
     errorMessage("login-error", "Incorrect username or password");
     changeInputBorder("red", "signin-username");
     changeInputBorder("red", "signin-password");
+  }
+};
+
+// function to remember username
+
+// function to reset user credentials
+let getCode = (event) => {
+  let storedEmail = localStorage.getItem("email");
+  let enteredEmail = $(`#reset-email`).val();
+  let storedUsername = localStorage.getItem("username");
+  let enteredUsername = $(`#reset-username`).val();
+  if (enteredEmail === storedEmail && enteredUsername === storedUsername) {
+    generateOTP(event);
+    event.preventDefault();
+  } else {
+    event.preventDefault();
+    errorMessage("reset-error", "Incorrect username or email");
+  }
+};
+let otp = "";
+// function to generate otp
+const generateOTP = (event) => {
+  event.preventDefault();
+
+  let digits = "0123456789";
+  for (let i = 0; i < 6; i++) {
+    otp += digits[Math.floor(Math.random() * digits.length)];
+  }
+  alert(`Your OTP is ${otp}`);
+  return otp;
+};
+
+// function to validate otp
+
+const validateOTP = (event) => {
+  event.preventDefault();
+  let enteredOTP = $(`#reset-code`).val();
+  if (enteredOTP === otp && enteredOTP !== "") {
+    localStorage.removeItem("password");
+    localStorage.setItem("password", $(`#reset-password`).val());
+    alert("Password reset successful!!!");
+    $(`#reset-form`).submit();
+  } else {
+    alert(otp);
+    event.preventDefault();
+    errorMessage("reset-error", "Incorrect OTP");
   }
 };

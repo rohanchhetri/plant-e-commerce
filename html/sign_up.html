@@ -50,6 +50,7 @@
             class="user-input"
             id="signup-password"
             placeholder="Password"
+            oninput="validPassword()"
             required
           />
           <span
@@ -59,14 +60,9 @@
             ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
           ></span>
           <div class="error" id="conditions">
-            <span class="condition" id="error1"
-              >*Password must be between 8 to 24 characters</span
-            ><span class="condition" id="error2"
-              >*Password must include at least a capital letter
-            </span>
-            <span class="condition" id="error3"
-              >*Password must include at least a number</span
-            >
+            <span class="condition" id="error1"></span
+            ><span class="condition" id="error2"> </span>
+            <span class="condition" id="error3"></span>
           </div>
         </div>
         <div class="input" id="confirm-pw">

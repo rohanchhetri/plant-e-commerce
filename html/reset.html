@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form class="form" id="reset-form" action="sign_in.html">
+      <div class="signin-form">
+        <div class="login-logo">
+          <img src="/src/logoclear.png" alt="" />
+        </div>
+
+        <h2>Password Reset</h2>
+        <div class="input" id="user" style="margin-left: -12px">
+          <input
+            type="email"
+            class="user-input"
+            id="reset-email"
+            placeholder="Email"
+            oninput="changeInputBorder('none','signin-username')"
+          /><span class="icon"
+            ><i class="fa-regular fa-envelope" style="color: #000000"></i
+          ></span>
+        </div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div class="input" id="user" style="width: 70%">
+            <input
+              type="text"
+              class="user-input"
+              id="reset-username"
+              placeholder="Username"
+              oninput="changeInputBorder('none','signin-username')"
+            />
+            <span class="icon"
+              ><i class="fa-regular fa-user" style="color: #000000"></i
+            ></span>
+          </div>
+          <button
+            id="otp"
+            style="
+              padding: 0.9rem 0.5rem;
+              font-size: 0.9rem;
+              background: #336622;
+              border: none;
+              border-radius: 5px;
+              width: 25%;
+            "
+            onclick="getCode(event)"
+          >
+            Get Code
+          </button>
+        </div>
+        <div class="input" id="user" style="margin-left: -5px">
+          <input
+            style="width: 99%"
+            type="number"
+            class="user-input"
+            id="reset-code"
+            placeholder="Verification Code"
+            oninput="changeInputBorder('none','signin-username')"
+          />
+        </div>
+        <div class="input" id="pw" style="margin-left: -10px">
+          <input
+            type="password"
+            class="user-input"
+            id="reset-password"
+            placeholder="New Password"
+            oninput="changeInputBorder('none','signin-password')"
+          />
+          <span
+            class="icon"
+            id="reset-pw"
+            onclick="showPassword('reset-password','reset-pw')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <span class="error" id="reset-error"></span>
+        </div>
+
+        <div class="input input-btn">
+          <!-- <button onclick="validateOTP(event)">reset</button> -->
+          <input
+            type="submit"
+            id="reset-btn"
+            value="Reset"
+            style="width: 100%"
+            onclick="validateOTP(event)"
+          />
+        </div>
+        <hr />
+        <p>
+          Remember your password?
+          <span class="register-btn" onclick="goToPage('sign_in.html')"
+            >Return to Login</span
+          >
+        </p>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/validation.js"></script>
+  </body>
+</html>
