@@ -76,13 +76,13 @@ let validPassword = () => {
   } else {
     hideError("error3");
   }
-  function hideError(id) {
-    $(`#${id}`).css("display", "none");
-  }
-  function showError(id) {
-    $(`#${id}`).css("display", "flex");
-  }
 };
+function hideError(id) {
+  $(`#${id}`).css("display", "none");
+}
+function showError(id) {
+  $(`#${id}`).css("display", "flex");
+}
 
 // function to check if password and confirm password are same
 let passwordConfirmation = (event) => {
