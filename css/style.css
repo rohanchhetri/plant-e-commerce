@@ -82,14 +82,27 @@ body {
   display: none;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 1);
 }
+#sidebar_2 {
+  min-width: 200px;
+  width: 360px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: 25px;
+  border-radius: 0 20px 20px 0;
+  margin: 0 100px 0 0;
+  display: none;
+}
 .sidebar-items {
   padding-top: 10px;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .sidebar-items-icons {
-  right: 10px;
-  position: absolute;
+  /* right: 10px;
+  position: absolute; */
 }
 #home-user {
   font-size: 24px;

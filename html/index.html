@@ -45,7 +45,7 @@
               <span><i class="fa-solid fa-magnifying-glass"></i></span>
             </li>
             <li>
-              <span onclick="showError('sidebar')"
+              <span onclick="showError('sidebar_1')"
                 ><i class="fa-solid fa-user"></i
               ></span>
             </li>
@@ -57,22 +57,57 @@
             </li>
           </ul>
           <li id="bars">
-            <span onclick="showError('sidebar')"
+            <span onclick="showError('sidebar_2')"
               ><i class="fa-solid fa-bars"></i
             ></span>
           </li>
         </div>
       </nav>
-      <div class="sidebar" id="sidebar">
+      <div class="sidebar" id="sidebar_1">
         <ul style="list-style: none">
           <span style="font-size: 12px; display: flex; align-items: center">
             Hello<i
               class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
               id="circle-cross"
-              onclick="hideError('sidebar')"
+              onclick="hideError('sidebar_1')"
             ></i>
           </span>
           <li id="home-user">User</li>
+          <li class="sidebar-items">
+            Wishlist
+            <i class="fa-solid fa-heart sidebar-items-icons"></i>
+          </li>
+
+          <li class="sidebar-items">
+            Cart
+            <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
+          </li>
+
+          <li class="sidebar-items">
+            Login/Register
+            <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar" id="sidebar_2">
+        <ul style="list-style: none; width: 100%">
+          <li
+            style="font-size: 12px; display: flex; align-items: center"
+            class="sidebar-items"
+          >
+            Hello<i
+              class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
+              id="circle-cross"
+              onclick="hideError('sidebar_2')"
+            ></i>
+          </li>
+
+          <li id="home-user">User</li>
+          <li class="sidebar-items">Home</li>
+          <li class="sidebar-items">Products</li>
+          <li class="sidebar-items">Shop</li>
+          <li class="sidebar-items">About</li>
+          <li class="sidebar-items">Contact</li>
           <li class="sidebar-items">
             Wishlist
             <i class="fa-solid fa-heart sidebar-items-icons"></i>
