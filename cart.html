@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <style>
+      span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .cart-container {
+        /* width: 80vw; */
+        /* margin: 80px 0; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        align-items: start;
+      }
+      table {
+        margin: 20px 5px;
+        border-collapse: collapse;
+      }
+
+      .table1 {
+        width: 60%;
+        min-width: 320px;
+      }
+      .table2 {
+        width: 30%;
+        min-width: 320px;
+      }
+      th {
+        background-color: #336622;
+        color: white;
+        text-align: left;
+        padding: 5px;
+      }
+      td {
+        padding: 5px;
+        border-bottom: 1px solid #336622;
+      }
+      .product {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+      }
+      .product-image {
+        width: 72px;
+        height: 96px;
+        padding: 5px 15px;
+      }
+      .product-info {
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+        /* padding: 5px 15px; */
+      }
+    </style>
+    <script src="/js/validation.js"></script>
+  </head>
+  <body>
+    <main>
+      <p>
+        <span style="color: grey" onclick="goToPage('index.html')">Home </span>
+        / Cart
+      </p>
+      <h1 style="text-align: center; font-weight: 400">Shopping Cart</h1>
+
+      <div class="cart-container">
+        <table class="table1">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="/src/bedroom-plant.jpg"
+                  alt=""
+                />
+                <div class="product-info">
+                  <p>Indoor plant</p>
+                  <p>price</p>
+                  <p>remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" min="1" max="10" /></td>
+            <td>$ 10.00</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="/src/bedroom-plant.jpg"
+                  alt=""
+                />
+                <div class="product-info">
+                  <p>Indoor plant</p>
+                  <p>price</p>
+                  <p>remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" min="1" max="10" /></td>
+            <td>$ 10.00</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="/src/bedroom-plant.jpg"
+                  alt=""
+                />
+                <div class="product-info">
+                  <p>Indoor plant</p>
+                  <p>price</p>
+                  <p>remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" min="1" max="10" /></td>
+            <td>$ 10.00</td>
+          </tr>
+        </table>
+        <table class="table2">
+          <tr>
+            <th>Order Details</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="product" style="display: block">
+                <h2>Cart totals</h2>
+                <p>Subtotal: <span>$50.00</span></p>
+                <p>Shipping: <span>Free</span></p>
+                <p>Total: <span>$50.00</span></p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
