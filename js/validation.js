@@ -52,36 +52,43 @@ let passwordValidation = () => {
 let validPassword = () => {
   let signupPassword = $(`#signup-password`).val();
   if (!(signupPassword.length >= 8 && signupPassword.length <= 24)) {
-    showError("error1");
-    showError("conditions");
+    showElement("error1");
+    showElement("conditions");
     errorMessage("error1", "*Password must be 8 to 24 chaacters");
   } else {
-    hideError("error1");
-    hideError("conditions");
+    hideElement("error1");
+    hideElement("conditions");
   }
   if (!/\d/.test(signupPassword)) {
-    showError("error2");
-    showError("conditions");
+    showElement("error2");
+    showElement("conditions");
     errorMessage("error2", "*Password must include atleast one number");
   } else {
-    hideError("error2");
+    hideElement("error2");
   }
   if (!/[A-Z]/.test(signupPassword)) {
-    showError("error3");
-    showError("conditions");
+    showElement("error3");
+    showElement("conditions");
     errorMessage(
       "error3",
       "*Password must include atleast one uppercase letter"
     );
   } else {
-    hideError("error3");
+    hideElement("error3");
   }
 };
-function hideError(id) {
+function hideElement(id) {
   $(`#${id}`).css("display", "none");
 }
-function showError(id) {
+function showElement(id) {
   $(`#${id}`).css("display", "flex");
+}
+function toggleDisplay(id) {
+  if ($(`#${id}`).css("display") === "none") {
+    $(`#${id}`).css("display", "flex");
+  } else {
+    $(`#${id}`).css("display", "none");
+  }
 }
 
 // function to check if password and confirm password are same
@@ -176,6 +183,7 @@ let getCode = (event) => {
 let otp = "";
 // function to generate otp
 const generateOTP = (event) => {
+  otp = "";
   event.preventDefault();
 
   let digits = "0123456789";
