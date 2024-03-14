@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-      span:hover {
+      #home:hover {
         cursor: pointer;
         text-decoration: underline;
       }
       .cart-container {
-        /* width: 80vw; */
+        /* width: 100vw; */
         /* margin: 80px 0; */
         display: flex;
         flex-direction: row;
@@ -27,11 +31,11 @@
 
       .table1 {
         width: 60%;
-        min-width: 320px;
+        min-width: 400px;
       }
       .table2 {
         width: 30%;
-        min-width: 320px;
+        min-width: 400px;
       }
       th {
         background-color: #336622;
@@ -43,21 +47,32 @@
         padding: 5px;
         border-bottom: 1px solid #336622;
       }
-      .product {
+      .item {
         display: flex;
+        justify-content: space-evenly;
         align-items: center;
+        width: 200px;
         line-height: 0;
       }
-      .product-image {
-        width: 72px;
-        height: 96px;
-        padding: 5px 15px;
-      }
-      .product-info {
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
+      .item-image {
+        min-width: 72px;
+        width: 20%;
+        min-height: 96px;
+
         /* padding: 5px 15px; */
+      }
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* padding: 5px 15px; */
+      }
+      .change-qty {
+        background-color: #336622;
+        color: white;
+        padding: 7px 12px;
+        /* border-radius: 5px; */
+        border: 2px solid white;
       }
     </style>
     <script src="/js/validation.js"></script>
@@ -65,7 +80,9 @@
   <body>
     <main>
       <p>
-        <span style="color: grey" onclick="goToPage('index.html')">Home </span>
+        <span id="home" style="color: grey" onclick="goToPage('index.html')"
+          >Home
+        </span>
         / Cart
       </p>
       <h1 style="text-align: center; font-weight: 400">Shopping Cart</h1>
@@ -73,63 +90,76 @@
       <div class="cart-container">
         <table class="table1">
           <tr>
-            <th>Product</th>
+            <th>Item</th>
             <th>Quantity</th>
             <th>Total</th>
           </tr>
-          <tr>
+          <tr class="items">
             <td>
-              <div class="product">
-                <img
-                  class="product-image"
-                  src="/src/bedroom-plant.jpg"
-                  alt=""
-                />
-                <div class="product-info">
+              <div class="item">
+                <img class="item-image" src="/src/bedroom-plant.jpg" alt="" />
+                <div class="item-info">
                   <p>Indoor plant</p>
-                  <p>price</p>
-                  <p>remove</p>
+                  <p>Price: $<span id="item_price">10</span>.00</p>
+                  <p onclick="deleteItem()" style="color: red; margin: 5px 0">
+                    <span style="font-size: 14px">Delete </span>
+                    <i id="delete_item" class="fa-solid fa-trash"></i>
+                  </p>
                 </div>
               </div>
             </td>
-            <td><input type="number" min="1" max="10" /></td>
-            <td>$ 10.00</td>
+            <td>
+              <span
+                class="change-qty"
+                id="increase_qty"
+                style="border-radius: 10px 0 0 10px"
+                >+</span
+              ><span class="change-qty" id="item_qty" style="padding: 10px 15px"
+                >1</span
+              ><span
+                class="change-qty"
+                id="decrease_qty"
+                style="border-radius: 0 10px 10px 0"
+                >-</span
+              >
+            </td>
+            <td>$ <span id="total">00.00</span></td>
           </tr>
-          <tr>
+          <tr class="items">
             <td>
-              <div class="product">
-                <img
-                  class="product-image"
-                  src="/src/bedroom-plant.jpg"
-                  alt=""
-                />
-                <div class="product-info">
+              <div class="item">
+                <img class="item-image" src="/src/bedroom-plant.jpg" alt="" />
+                <div class="item-info">
                   <p>Indoor plant</p>
-                  <p>price</p>
-                  <p>remove</p>
+                  <p>Price: $<span id="item_price">10</span>.00</p>
+                  <p
+                    onclick="deleteItem(this)"
+                    style="color: red; margin: 5px 0"
+                  >
+                    <span style="font-size: 14px">Delete </span>
+                    <i id="delete_item" class="fa-solid fa-trash"></i>
+                  </p>
                 </div>
               </div>
             </td>
-            <td><input type="number" min="1" max="10" /></td>
-            <td>$ 10.00</td>
-          </tr>
-          <tr>
             <td>
-              <div class="product">
-                <img
-                  class="product-image"
-                  src="/src/bedroom-plant.jpg"
-                  alt=""
-                />
-                <div class="product-info">
-                  <p>Indoor plant</p>
-                  <p>price</p>
-                  <p>remove</p>
-                </div>
-              </div>
+              <span
+                class="change-qty"
+                id="increase_qty"
+                style="border-radius: 10px 0 0 10px"
+                onclick="increaseQty()"
+                >+</span
+              ><span class="change-qty" id="item_qty" style="padding: 10px 15px"
+                >1</span
+              ><span
+                class="change-qty"
+                id="decrease_qty"
+                style="border-radius: 0 10px 10px 0"
+                onclick="decreaseQty()"
+                >-</span
+              >
             </td>
-            <td><input type="number" min="1" max="10" /></td>
-            <td>$ 10.00</td>
+            <td>$ <span id="total">00.00</span></td>
           </tr>
         </table>
         <table class="table2">
@@ -138,16 +168,56 @@
           </tr>
           <tr>
             <td>
-              <div class="product" style="display: block">
+              <div class="item" style="display: block">
                 <h2>Cart totals</h2>
-                <p>Subtotal: <span>$50.00</span></p>
-                <p>Shipping: <span>Free</span></p>
-                <p>Total: <span>$50.00</span></p>
+                <p>Subtotal: $<span id="sub_total">00.00</span></p>
+                <p>Shipping: <span id="shipping">00.00</span></p>
+                <p>Total: $<span id="cart_total">00.00</span></p>
               </div>
             </td>
           </tr>
         </table>
       </div>
     </main>
+    <script>
+      let item = document.getElementById("item_qty").innerHTML;
+      const increaseQty = () => {
+        item++;
+        document.getElementById("item_qty").innerHTML = item;
+        calculateTotal();
+      };
+      const decreaseQty = () => {
+        if (item > 1) {
+          item--;
+          document.getElementById("item_qty").innerHTML = item;
+          calculateTotal();
+        }
+      };
+
+      const calculateTotal = () => {
+        let price = document.getElementById("item_price").innerHTML;
+        let total = item * price;
+        let shipping = document.getElementById("shipping");
+        let shippingCost = 0;
+        document.getElementById("total").innerHTML = total.toFixed(2);
+        document.getElementById("sub_total").innerHTML = total.toFixed(2);
+        if (total > 100) {
+          shipping.innerHTML = "Free";
+        } else {
+          shippingCost = (10 / 100) * total;
+          shipping.innerHTML = shippingCost.toFixed(2);
+        }
+        document.getElementById("cart_total").innerHTML = (
+          total + shippingCost
+        ).toFixed(2);
+      };
+      calculateTotal();
+
+      const deleteItem = () => {
+        let cart_item = document.querySelector(".items");
+        cart_item.remove();
+        alert("Item removed from cart");
+      };
+    </script>
   </body>
 </html>
