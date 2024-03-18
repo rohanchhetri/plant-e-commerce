@@ -80,8 +80,10 @@
         background-color: #336622;
         color: white;
         padding: 7px 12px;
-        /* border-radius: 5px; */
         border: 2px solid white;
+      }
+      #empty {
+        text-align: center;
       }
     </style>
     <script src="/js/validation.js"></script>
@@ -104,7 +106,10 @@
             <th>Quantity</th>
             <th>Total</th>
           </tr>
-          <tr class="cart-list">
+          <tr id="empty">
+            <td colspan="3" style="padding: 40px 0">Your cart is Empty.</td>
+          </tr>
+          <!-- <tr class="cart-list">
             <td>
               <div class="cart-item">
                 <img class="item-image" src="/src/bedroom-plant.jpg" alt="" />
@@ -132,7 +137,7 @@
               >
             </td>
             <td>$ <span id="total">00.00</span></td>
-          </tr>
+          </tr> -->
         </table>
         <table class="table2">
           <tr>

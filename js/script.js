@@ -124,34 +124,66 @@ const displayCart = (item) => {
     `;
   cartItem.appendChild(cartRow);
 };
+
 getCartList().forEach((item) => {
   displayCart(item);
 });
+// if (cartList.length !== 0) {
+//   document.getElementById("empty").style.display = "none";
+// } else {
+//   document.getElementById("empty").style.display = "block";
+// }
+// Function to increment quantity
 const increaseQty = (event) => {
-  let itemElement = event.target.parentElement.querySelector(".item_qty");
-  let itemQty = itemElement.innerHTML;
-  itemQty++;
-  itemElement.innerHTML = itemQty;
-  calculateTotal(itemQty);
-  alert(hi);
+  const qtyElement = event.target.parentElement.querySelector(".item_qty");
+  qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
 };
-let increaseBtn = document.querySelectorAll(".increase_qty");
-increaseBtn.forEach((btn) => {
-  btn.addEventListener("click", increaseQty);
-});
 
+// Function to decrement quantity
 const decreaseQty = (event) => {
-  let itemElement = event.target.parentElement.querySelector(".item_qty");
-  let itemQty = itemElement.innerHTML;
-  if (itemQty > 1) {
-    itemQty--;
-    itemElement.innerHTML = itemQty;
-    calculateTotal(itemQty);
+  const qtyElement = event.target.parentElement.querySelector(".item_qty");
+  const newQty = parseInt(qtyElement.textContent) - 1;
+  if (newQty >= 0) {
+    qtyElement.textContent = newQty;
   }
 };
-let decreaseBtn = document.querySelectorAll(".decrease_qty");
-decreaseBtn.forEach((btn) => {
-  btn.addEventListener("click", decreaseQty);
+
+// Function to delete item
+const deleteItem = (event) => {
+  const itemRow = event.target.closest(".cart-list");
+  itemRow.remove();
+
+  // Get the index of the item to be deleted
+  const itemName = itemRow.querySelector(".product-name").textContent;
+  const itemIndex = cartList.findIndex((item) => item.name === itemName);
+
+  // Remove the item from the cartList array
+  cartList.splice(itemIndex, 1);
+
+  // Update the localStorage with the modified cartList array
+  setCartList();
+  emptyCart();
+};
+let emptyCart = () => {
+  if (document.querySelector(".table1").childElementCount <= 1) {
+    document.getElementById("empty").style.display = "visible";
+  } else {
+    document.getElementById("empty").style.display = "none";
+  }
+};
+emptyCart();
+
+// Attach event listeners for increase/decrease/delete buttons
+document.querySelectorAll(".increase_qty").forEach((button) => {
+  button.addEventListener("click", increaseQty);
+});
+
+document.querySelectorAll(".decrease_qty").forEach((button) => {
+  button.addEventListener("click", decreaseQty);
+});
+
+document.querySelectorAll("#delete_item").forEach((button) => {
+  button.addEventListener("click", deleteItem);
 });
 
 const calculateTotal = (itemQty) => {
@@ -176,13 +208,13 @@ const calculateTotal = (itemQty) => {
 };
 calculateTotal();
 
-let parentElement = document.querySelectorAll("#delete");
-parentElement.forEach(function (parentElement) {
-  parentElement.addEventListener("click", (event) => {
-    event.target.closest("tr").remove();
-  });
-});
-const deleteItem = (event) => {
-  event.stopPropagation();
-  event.target.parentElement.closest("tr").remove();
-};
+// let parentElement = document.querySelectorAll("#delete");
+// parentElement.forEach(function (parentElement) {
+//   parentElement.addEventListener("click", (event) => {
+//     event.target.closest("tr").remove();
+//   });
+// });
+// const deleteItem = (event) => {
+//   event.stopPropagation();
+//   event.target.parentElement.closest("tr").remove();
+// };
