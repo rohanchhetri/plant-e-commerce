@@ -33,7 +33,7 @@
         <div class="nav-content-1">
           <ul style="font-size: 18px">
             <li>Home</li>
-            <li>Products</li>
+            <li onclick="goToPage('product.html')">Products</li>
             <li>Shop</li>
             <li>About</li>
             <li>Contact</li>
@@ -114,7 +114,9 @@
 
           <li class="home_user">User</li>
           <li class="sidebar-items2"><span>Home</span></li>
-          <li class="sidebar-items2"><span>Products</span></li>
+          <li class="sidebar-items2">
+            <span onclick="goToPage('product.html')">Products</span>
+          </li>
           <li class="sidebar-items2"><span>Shop</span></li>
           <li class="sidebar-items2"><span>About</span></li>
           <li class="sidebar-items2" style="margin-bottom: 25px">
@@ -128,7 +130,7 @@
             <span onclick="goToPage('cart.html')">Cart</span>
             <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
           </li>
-          <li class="sidebar-items">
+          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
             <span class="isLogged">Login/Register</span>
             <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
           </li>
@@ -180,7 +182,7 @@
           <p>Qucik Links</p>
           <ul class="footer-items">
             <span>Home</span>
-            <span>Products</span>
+            <span onclick="goToPage('product.html')">Products</span>
             <span>Shop</span>
             <span>About</span>
           </ul>
@@ -228,7 +230,7 @@
           <p class="footer-head">Quick Links</p>
 
           <li>Home</li>
-          <li>Products</li>
+          <li onclick="goToPage('product.html')">Products</li>
           <li>Shop</li>
           <li>About</li>
         </div>

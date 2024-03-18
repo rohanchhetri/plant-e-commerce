@@ -12,9 +12,10 @@ let dataValidation = (event) => {
 };
 let emailValidation = () => {
   let signupEmail = $(`#signup-email`).val();
-  if (signupEmail !== "" && /@/.test(signupEmail)) {
+  if (signupEmail !== "" && /@./.test(signupEmail)) {
     return true;
   } else {
+    alert("Invalid Email.");
     return false;
   }
 };

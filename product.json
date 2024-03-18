@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Bamboo Plant",
+    "price": 12,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Palm Tree",
+    "price": 10,
+    "image": "/src/product_images/palm_tree.webp"
+  },
+  {
+    "id": "3",
+    "name": "Ficus Tree",
+    "price": 10,
+    "image": "/src/product_images/ficus_tree.jpg"
+  },
+  {
+    "id": "3",
+    "name": " Potted Plants",
+    "price": 10,
+    "image": "/src/product_images/fauxpotted_plants.webp"
+  },
+  {
+    "id": "4",
+    "name": "Peperomania Watermelon",
+    "price": 10,
+    "image": "/src/product_images/peperomania_watermelon.webp"
+  },
+  {
+    "id": "5",
+    "name": "Bamboo",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Rose",
+    "price": 10,
+    "image": "/src/product_images/rose_plant.webp"
+  },
+  {
+    "id": "6",
+    "name": "name",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "7",
+    "name": " Name",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "8",
+    "name": " Name",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "9",
+    "name": " Name",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  },
+  {
+    "id": "10",
+    "name": " Name",
+    "price": 10,
+    "image": "/src/product_images/bambo_plant.jpg"
+  }
+]
