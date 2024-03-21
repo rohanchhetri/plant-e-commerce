@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/validation.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo" onclick="goToPage('index.html')">
+          <img
+            src="/src/logoo.png"
+            alt="logo of we care nature"
+            height="100%"
+            width="160px"
+          />
+        </div>
+        <div class="nav-content-1">
+          <ul style="font-size: 18px">
+            <li>Home</li>
+            <li onclick="goToPage('product.html')">Products</li>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="nav-content-2">
+          <ul>
+            <li>
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </li>
+            <li>
+              <span onclick="toggleDisplay('sidebar_1')"
+                ><i class="fa-solid fa-user"></i
+              ></span>
+            </li>
+            <li>
+              <span><i class="fa-solid fa-heart"></i></span>
+            </li>
+            <li>
+              <span onclick="goToPage('cart.html')"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></span>
+            </li>
+          </ul>
+          <li id="bars">
+            <span class="bars" onclick="toggleDisplay('sidebar_2')"
+              ><i class="fa-solid fa-bars" style="color: white"></i
+            ></span>
+          </li>
+        </div>
+      </nav>
+      <div class="sidebar" id="sidebar_1">
+        <ul style="list-style: none; width: 100%">
+          <span class="sidebar-items" style="font-size: 12px">
+            Hello<i
+              class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
+              id="circle-cross"
+              onclick="hideElement('sidebar_1')"
+            ></i>
+          </span>
+          <li class="home_user">User</li>
+          <li class="sidebar-items">
+            <span>Wishlist</span>
+            <i class="fa-solid fa-heart sidebar-items-icons"></i>
+          </li>
+          <li class="sidebar-items">
+            <span onclick="goToPage('cart.html')">Cart</span>
+            <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
+          </li>
+
+          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
+            <span class="isLogged">Login/Register</span>
+            <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar" id="sidebar_2">
+        <ul style="list-style: none; width: 100%">
+          <li
+            style="
+              margin: -20px 0 20px 0;
+              background: white;
+              border-bottom: 1px solid black;
+            "
+          >
+            <img src="/src/logo-clear.png" alt="" width="100%" />
+          </li>
+          <li
+            style="font-size: 12px; display: flex; align-items: center"
+            class="sidebar-items"
+          >
+            Hello<i
+              class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
+              id="circle-cross"
+              onclick="hideElement('sidebar_2')"
+            ></i>
+          </li>
+
+          <li class="home_user">User</li>
+          <li class="sidebar-items2"><span>Home</span></li>
+          <li class="sidebar-items2">
+            <span onclick="goToPage('product.html')">Products</span>
+          </li>
+          <li class="sidebar-items2"><span>Shop</span></li>
+          <li class="sidebar-items2"><span>About</span></li>
+          <li class="sidebar-items2" style="margin-bottom: 25px">
+            <span>Contact</span>
+          </li>
+          <li class="sidebar-items">
+            <span> Wishlist</span>
+            <i class="fa-solid fa-heart sidebar-items-icons"></i>
+          </li>
+          <li class="sidebar-items">
+            <span onclick="goToPage('cart.html')">Cart</span>
+            <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
+          </li>
+          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
+            <span class="isLogged">Login/Register</span>
+            <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-content">
+        <div class="text-section">
+          <p class="text-head">Find perfect plants for you home</p>
+          <p>Beautiful plants that encourage your to get creative</p>
+          <button class="btn shop-now">SHOP NOW</button>
+        </div>
+        <!-- <div class="image-section">
+          <img src="/src/main-section-img.webp" alt="" width="100%" />
+        </div> -->
+      </div>
+      <p class="sub-head">Categories</p>
+      <div class="plant-categories"></div>
+      <p class="sub-head">
+        Love and work are to people what water and sunshine are to plants
+      </p>
+      <div class="blog-section">
+        <div class="blog" id="blog-1" style="height: 250px">
+          <img src="/src/interior-plant.jpg" alt="" height="180%" width="100%" />
+          <p>
+            How to water your freaking plants so they don't die afrer one week
+          </p>
+        </div>
+        <div class="blog" id="blog-1" style="height: 250px">
+          <img src="/src/interior-plant.jpg" alt="" height="180%" width="100%" />
+          <p>
+            How to water your freaking plants so they don't die afrer one week
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-content1">
+          <p>Contact Us</p>
+          <ul class="footer-items">
+            <span>122 Mississauga</span>
+            <span>weCare@gmail.com</span>
+            <span>1234567890</span>
+          </ul>
+        </div>
+        <div class="footer-content2">
+          <p>Qucik Links</p>
+          <ul class="footer-items">
+            <span>Home</span>
+            <span onclick="goToPage('product.html')">Products</span>
+            <span>Shop</span>
+            <span>About</span>
+          </ul>
+        </div>
+        <div class="footer-content3">
+          <p>Follow Us</p>
+          <ul class="footer-items">
+            <span> <i class="fa-brands fa-facebook"></i>Facebook</span>
+            <span><i class="fa-brands fa-instagram"></i> Instagram</span>
+            <span><i class="fa-brands fa-tiktok"></i>Youtube</span>
+            <span><i class="fa-brands fa-linkedin"></i> LinkedIn </span>
+          </ul>
+        </div>
+        <!-- <div class="footer-content4">
+          <p>Newsletter</p>
+          <input type="email" />
+        </div> -->
+      </div>
+
+      <!-- <div
+        class="footer-content"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        "
+      >
+        <div class="footer-content-1" style="flex: 1">
+          <img src="/src/logo-clear.png" alt="" width="100%" />
+          <ul
+            style="
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              justify-content: space-evenly;
+            "
+          >
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </ul>
+        </div>
+        <div class="footer-content-2" style="flex: 1">
+          <p class="footer-head">Quick Links</p>
+
+          <li>Home</li>
+          <li onclick="goToPage('product.html')">Products</li>
+          <li>Shop</li>
+          <li>About</li>
+        </div>
+        <div class="footer-content-3" style="flex: 1">
+          <p class="footer-head">Contact</p>
+
+          <li>123 Street, Mississauga, ON</li>
+          <li>weCare@gmail.com</li>
+          <li>1234567890</li>
+        </div>
+      </div> -->
+      <div class="footer-bottom" style="text-align: center">
+        <p>&copy; 2023 We Care Nature</p>
+      </div>
+    </footer>
+
+    <script>
+      let categories = [
+        {
+          type: "Jungle Plants",
+          url: "/src/jungle-plant.jpg",
+          alt: "Jungle plants categories",
+          id: "jungle-plant",
+        },
+        {
+          type: "Outdoor Plants",
+          url: "/src/outdoor-plant.webp",
+          alt: "Outdoor plants categories",
+          id: "outdoor-plant",
+        },
+        {
+          type: "Bedroom Plants",
+          url: "/src/bedroom-plant.jpg",
+          alt: "Bedroom plants categories",
+          id: "bedroom-plant",
+        },
+        {
+          type: "Indoor Plants",
+          url: "/src/indoor-plant.jpg",
+          alt: "Indoor plants categories",
+          id: "indoor-plant",
+        },
+      ];
+      $(document).ready(function () {
+        let categoriesList = $(".plant-categories");
+
+        for (let i = 0; i < categories.length; i++) {
+          categoriesList.append(`
+          <div class= "categories-list" id = "${categories[i].id}">
+            <img src = "${categories[i].url}" alt = "${categories[i].alt} class = "cat-img" />
+            <p class = "cat-title">${categories[i].type}</p>
+            </div>`);
+        }
+      });
+      let validUser = localStorage.getItem("username");
+      let homeUser = document.querySelectorAll(".home_user");
+      let login = document.querySelectorAll(".isLogged");
+      if (validUser != null) {
+        for (let i = 0; i < homeUser.length; i++) {
+          homeUser[i].innerHTML = validUser.toUpperCase();
+        }
+        for (let i = 0; i < login.length; i++) {
+          login[i].innerHTML = "Sign Out";
+        }
+      }
+      // let username = document.getElementById("home_user");
+      // document.getElementById("home_user");
+
+      // username.innerHTML =
+    </script>
+  </body>
+</html>
