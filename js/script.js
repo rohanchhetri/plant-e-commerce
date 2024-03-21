@@ -108,16 +108,16 @@ const displayCart = (item) => {
         </div>
       </td>
       <td>
-        <span
+        <button
           class="change-qty increase_qty"
           style="border-radius: 10px 0 0 10px"
-          >+</span
-        ><span class="change-qty item_qty" style="padding: 10px 15px"
+          >+</button
+        ><span class="change-qty item_qty" style="padding: 9px 15px"
           >${item.quantity}</span
-        ><span
+        ><button
           class="change-qty decrease_qty"
           style="border-radius: 0 10px 10px 0"
-          >-</span
+          >-</button
         >
       </td>
       <td>$ <span id="total">00.00</span></td>
@@ -218,3 +218,13 @@ calculateTotal();
 //   event.stopPropagation();
 //   event.target.parentElement.closest("tr").remove();
 // };
+
+// function to toggle paid message
+const showPaidMsg = () => {
+  let msg = $(".paid");
+  if (msg.css("display") == "flex") {
+    msg.css("display", "none");
+  } else {
+    msg.css("display", "flex");
+  }
+};
