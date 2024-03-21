@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <form class="form" id="register-form" action="sign_in.html?success=true">
+      <div class="signup-form">
+        <div class="login-logo">
+          <img src="/src/logoclear.png" alt="" />
+        </div>
+        <h2>Register</h2>
+        <div class="input" id="email">
+          <input
+            type="email"
+            class="user-input"
+            id="signup-email"
+            placeholder="Email"
+            required
+          />
+          <span class="icon"
+            ><i class="fa-regular fa-envelope" style="color: #000000"></i></span
+          ><br />
+        </div>
+        <div class="input" id="user">
+          <input
+            type="text"
+            class="user-input"
+            id="signup-username"
+            placeholder="Username"
+            minlength="5"
+            maxlength="32"
+            required
+          />
+          <span class="icon"
+            ><i class="fa-regular fa-user" style="color: #000000"></i
+          ></span>
+        </div>
+        <div class="input" id="signup-pw">
+          <input
+            type="password"
+            class="user-input"
+            id="signup-password"
+            placeholder="Password"
+            oninput="validPassword()"
+            required
+          />
+          <span
+            class="icon"
+            id="pw-2"
+            onclick="showPassword('signup-password','pw-2')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <div class="error" id="conditions">
+            <span class="condition" id="error1"></span
+            ><span class="condition" id="error2"> </span>
+            <span class="condition" id="error3"></span>
+          </div>
+        </div>
+        <div class="input" id="confirm-pw">
+          <input
+            type="password"
+            class="user-input"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            required
+          />
+          <span
+            class="icon"
+            id="pw-3"
+            onclick="showPassword('confirm-password',
+          'pw-3')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <span class="error" id="register-error"></span>
+        </div>
+        <div class="input input-btn">
+          <input
+            type="submit"
+            id="login-btn"
+            value="Register"
+            onclick="submissionHandler(event)"
+          />
+        </div>
+        <hr />
+        <p>
+          Already have an account?
+          <span class="register-btn" onclick="goToPage('sign_in.html')"
+            >Login</span
+          >
+        </p>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/validation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form class="form" id="signin-form" action="index.html">
+      <div class="signin-form">
+        <div class="login-logo">
+          <img src="/src/logoclear.png" alt="" />
+        </div>
+
+        <h2>Login</h2>
+        <div class="input" id="user">
+          <input
+            type="text"
+            class="user-input"
+            id="signin-username"
+            placeholder="Username"
+            required
+            oninput="changeInputBorder('none','signin-username')"
+          />
+          <span class="icon"
+            ><i class="fa-regular fa-user" style="color: #000000"></i
+          ></span>
+        </div>
+        <div class="input" id="pw">
+          <input
+            type="password"
+            class="user-input"
+            id="signin-password"
+            placeholder="Password"
+            required
+            oninput="changeInputBorder('none','signin-password')"
+          />
+          <span
+            class="icon"
+            id="pw-1"
+            onclick="showPassword('signin-password','pw-1')"
+            ><i class="fa-regular fa-eye-slash" style="color: #000000"></i
+          ></span>
+          <span class="error" id="login-error"></span>
+        </div>
+        <div class="access">
+          <span>
+            <input type="checkbox" name="remember-me" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+          </span>
+          <a href="reset.html"> <p>Forgot password?</p></a>
+        </div>
+        <div class="input input-btn">
+          <input
+            type="submit"
+            id="login-btn"
+            value="Login"
+            style="width: 100%"
+            onclick="getCredential(event)"
+          />
+        </div>
+        <hr />
+        <p>
+          Don't have an account?
+          <span class="register-btn" onclick="goToPage('sign_up.html')"
+            >Register</span
+          >
+        </p>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/validation.js"></script>
+  </body>
+</html>

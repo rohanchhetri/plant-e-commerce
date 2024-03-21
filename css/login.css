@@ -1,0 +1,142 @@
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* For Chrome, Safari, and Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* combined css for sign_in && sign_up pages */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+
+* {
+  /* margin: 0; */
+  color: white;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+body {
+  margin: 0;
+  background-image: url("/src/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+input {
+  padding: 0.8em;
+  margin: 5px;
+  border: none;
+  color: black;
+  border-radius: 0.5em;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.signup-form,
+.signin-form,
+.reset-form {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5em;
+  backdrop-filter: blur(5px);
+  height: auto;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 1em 3.5em 1.5em 3.5em;
+}
+.login-logo {
+  width: 100%;
+  img {
+    padding: 25px;
+    width: 70%;
+    margin-bottom: -1em;
+  }
+}
+hr {
+  width: 100%;
+  margin: 1em 0 0 0;
+}
+.input > input {
+  width: 98%;
+  font-size: 16px;
+}
+.user-input {
+  padding-right: 2.3em;
+  outline: none;
+}
+.signup-form > :nth-child(n + 3):nth-child(-n + 6),
+.signin-form > :nth-child(n + 3):nth-child(-n + 4),
+.reset-form > :nth-child(n + 3):nth-child(-n + 5) {
+  margin-left: -12px;
+}
+.input-btn {
+  width: 100%;
+  margin-left: -5px;
+}
+.icon {
+  height: fit-content;
+  margin-left: -35px;
+}
+i {
+  width: 20px;
+}
+.register-btn {
+  font-weight: 600;
+  text-decoration: underline;
+}
+#login-btn,
+#reset-btn {
+  background: #336622;
+  color: white;
+  font-weight: 600;
+  padding: 0.7em;
+  width: 100%;
+}
+.register-btn:hover,
+button:hover {
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+h2 {
+  margin: 0.2em 0 0.5em 0;
+  font-size: 1.5em;
+}
+.access {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.error {
+  margin: 5px;
+  padding-left: 0.5em;
+  font-size: 15px;
+  flex-direction: column;
+  align-items: start;
+  display: flex;
+}
+#conditions {
+  display: none;
+}
+.contitions {
+  display: none;
+}
+
+#login-error,
+#register-error,
+#reset-error {
+  text-decoration: underline;
+}

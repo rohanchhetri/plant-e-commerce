@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      #home:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      h1 {
+        text-align: center;
+        font-weight: 400;
+      }
+      .cart-container {
+        /* width: 100vw; */
+        /* margin: 80px 0; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        align-items: start;
+      }
+      table {
+        margin: 20px 5px;
+        border-collapse: collapse;
+      }
+
+      .table1 {
+        min-width: 60%;
+        width: 420px;
+      }
+      .table2 {
+        width: 420px;
+        min-width: 30%;
+      }
+      th {
+        background-color: #336622;
+        color: white;
+        text-align: left;
+        padding: 10px;
+      }
+      td {
+        padding: 5px 0;
+        height: 120px;
+        width: fit-content;
+        border-bottom: 1px solid #336622;
+      }
+      .cart-item,
+      .cart-details {
+        display: flex;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        max-width: 300px;
+        line-height: 0;
+      }
+      .item-image {
+        min-width: 72px;
+        width: 20%;
+        min-height: 96px;
+
+        padding: 5px 15px;
+      }
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* padding: 5px 15px; */
+      }
+      #delete {
+        color: red;
+        margin: 5px 0;
+      }
+      .change-qty {
+        background-color: #336622;
+        color: white;
+        padding: 7px 12px;
+        border: 2px solid white;
+      }
+      #empty {
+        text-align: center;
+        font-size: 24px;
+      }
+      .payment {
+        background: #336622;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+      }
+      .payment:hover,
+      .increase_qty:hover,
+      .decrease_qty:hover {
+        cursor: pointer;
+        background: black;
+      }
+    </style>
+    <script src="/js/validation.js"></script>
+  </head>
+  <body>
+    <header>
+      <p>
+        <span id="home" style="color: grey" onclick="goToPage('index.html')"
+          >Home</span
+        >
+        / Cart
+      </p>
+      <h1>Shopping Cart</h1>
+    </header>
+    <main>
+      <div class="cart-container">
+        <table class="table1">
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+          <tr id="empty">
+            <td colspan="3" style="padding: 40px 0">Your cart is Empty.</td>
+          </tr>
+        </table>
+        <div>
+          <table class="table2">
+            <tr>
+              <th>Order Details</th>
+            </tr>
+            <tr>
+              <td>
+                <div class="cart-details" style="display: block">
+                  <h2>Cart totals</h2>
+                  <p>Subtotal: $<span id="sub_total">00.00</span></p>
+                  <p>Shipping: <span id="shipping">00.00</span></p>
+                  <p>Total: $<span id="cart_total">00.00</span></p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div
+            style="
+              width: 250px;
+              display: flex;
+              justify-content: start;
+              padding: 5px 15px;
+            "
+          >
+            <button class="payment" onclick="showPaidMsg()">
+              Make a payment
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="paid"
+      style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #336622;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 13px rgba(0, 0, 0, 1);
+        transition: opacity 10s ease;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div>
+        <h2>Thank you for your purchase</h2>
+        <p>Your order has been placed successfully</p>
+        <p>Order number: 1234567890</p>
+        <p>Order total: $<span id="order_total">00.00</span></p>
+      </div>
+      <div>
+        <button
+          style="
+            text-align: center;
+            padding: 5px 15px;
+            border: none;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+          onclick="showPaidMsg()"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
