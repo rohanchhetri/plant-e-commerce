@@ -17,129 +17,28 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="/js/validation.js"></script>
-    <style></style>
+    <style>
+      .shop-now {
+        background: #336622;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: ease 0.5s;
+      }
+      .shop-now:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: ease 0.5s;
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <nav class="navbar">
-        <div class="logo" onclick="goToPage('index.html')">
-          <img
-            src="/src/logoo.png"
-            alt="logo of we care nature"
-            height="100%"
-            width="160px"
-          />
-        </div>
-        <div class="nav-content-1">
-          <ul style="font-size: 18px">
-            <li>Home</li>
-            <li onclick="goToPage('product.html')">Products</li>
-            <li>Shop</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div class="nav-content-2">
-          <ul>
-            <li>
-              <span><i class="fa-solid fa-magnifying-glass"></i></span>
-            </li>
-            <li>
-              <span onclick="toggleDisplay('sidebar_1')"
-                ><i class="fa-solid fa-user"></i
-              ></span>
-            </li>
-            <li>
-              <span><i class="fa-solid fa-heart"></i></span>
-            </li>
-            <li>
-              <span onclick="goToPage('cart.html')"
-                ><i class="fa-solid fa-cart-shopping"></i
-              ></span>
-            </li>
-          </ul>
-          <li id="bars">
-            <span class="bars" onclick="toggleDisplay('sidebar_2')"
-              ><i class="fa-solid fa-bars" style="color: white"></i
-            ></span>
-          </li>
-        </div>
-      </nav>
-      <div class="sidebar" id="sidebar_1">
-        <ul style="list-style: none; width: 100%">
-          <span class="sidebar-items" style="font-size: 12px">
-            Hello<i
-              class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
-              id="circle-cross"
-              onclick="hideElement('sidebar_1')"
-            ></i>
-          </span>
-          <li class="home_user">User</li>
-          <li class="sidebar-items">
-            <span>Wishlist</span>
-            <i class="fa-solid fa-heart sidebar-items-icons"></i>
-          </li>
-          <li class="sidebar-items">
-            <span onclick="goToPage('cart.html')">Cart</span>
-            <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
-          </li>
-
-          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
-            <span class="isLogged">Login/Register</span>
-            <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
-          </li>
-        </ul>
-      </div>
-      <div class="sidebar" id="sidebar_2">
-        <ul style="list-style: none; width: 100%">
-          <li
-            style="
-              margin: -20px 0 20px 0;
-              background: white;
-              border-bottom: 1px solid black;
-            "
-          >
-            <img src="/src/logo-clear.png" alt="" width="100%" />
-          </li>
-          <li
-            style="font-size: 12px; display: flex; align-items: center"
-            class="sidebar-items"
-          >
-            Hello<i
-              class="fa-regular fa-xl fa-circle-xmark sidebar-items-icons"
-              id="circle-cross"
-              onclick="hideElement('sidebar_2')"
-            ></i>
-          </li>
-
-          <li class="home_user">User</li>
-          <li class="sidebar-items2"><span>Home</span></li>
-          <li class="sidebar-items2">
-            <span onclick="goToPage('product.html')">Products</span>
-          </li>
-          <li class="sidebar-items2"><span>Shop</span></li>
-          <li class="sidebar-items2"><span>About</span></li>
-          <li class="sidebar-items2" style="margin-bottom: 25px">
-            <span>Contact</span>
-          </li>
-          <li class="sidebar-items">
-            <span> Wishlist</span>
-            <i class="fa-solid fa-heart sidebar-items-icons"></i>
-          </li>
-          <li class="sidebar-items">
-            <span onclick="goToPage('cart.html')">Cart</span>
-            <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
-          </li>
-          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
-            <span class="isLogged">Login/Register</span>
-            <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
-          </li>
-        </ul>
-      </div>
-    </header>
+    <header class="header"></header>
     <main class="main">
       <div class="main-content">
-        <div class="text-section">
+        <div class="text-section" style="padding-left: 20px">
           <p class="text-head">Find perfect plants for you home</p>
           <p>Beautiful plants that encourage your to get creative</p>
           <button class="btn shop-now">SHOP NOW</button>
@@ -155,98 +54,32 @@
       </p>
       <div class="blog-section">
         <div class="blog" id="blog-1" style="height: 250px">
-          <img src="/src/interior-plant.jpg" alt="" height="180%" width="100%" />
+          <img
+            src="/src/interior-plant.jpg"
+            alt=""
+            height="180%"
+            width="100%"
+          />
           <p>
             How to water your freaking plants so they don't die afrer one week
           </p>
         </div>
         <div class="blog" id="blog-1" style="height: 250px">
-          <img src="/src/interior-plant.jpg" alt="" height="180%" width="100%" />
+          <img
+            src="/src/interior-plant.jpg"
+            alt=""
+            height="180%"
+            width="100%"
+          />
           <p>
             How to water your freaking plants so they don't die afrer one week
           </p>
         </div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-content1">
-          <p>Contact Us</p>
-          <ul class="footer-items">
-            <span>122 Mississauga</span>
-            <span>weCare@gmail.com</span>
-            <span>1234567890</span>
-          </ul>
-        </div>
-        <div class="footer-content2">
-          <p>Qucik Links</p>
-          <ul class="footer-items">
-            <span>Home</span>
-            <span onclick="goToPage('product.html')">Products</span>
-            <span>Shop</span>
-            <span>About</span>
-          </ul>
-        </div>
-        <div class="footer-content3">
-          <p>Follow Us</p>
-          <ul class="footer-items">
-            <span> <i class="fa-brands fa-facebook"></i>Facebook</span>
-            <span><i class="fa-brands fa-instagram"></i> Instagram</span>
-            <span><i class="fa-brands fa-tiktok"></i>Youtube</span>
-            <span><i class="fa-brands fa-linkedin"></i> LinkedIn </span>
-          </ul>
-        </div>
-        <!-- <div class="footer-content4">
-          <p>Newsletter</p>
-          <input type="email" />
-        </div> -->
-      </div>
-
-      <!-- <div
-        class="footer-content"
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-        "
-      >
-        <div class="footer-content-1" style="flex: 1">
-          <img src="/src/logo-clear.png" alt="" width="100%" />
-          <ul
-            style="
-              display: flex;
-              flex-direction: row;
-              width: 100%;
-              justify-content: space-evenly;
-            "
-          >
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-tiktok"></i>
-            <i class="fa-brands fa-linkedin"></i>
-          </ul>
-        </div>
-        <div class="footer-content-2" style="flex: 1">
-          <p class="footer-head">Quick Links</p>
-
-          <li>Home</li>
-          <li onclick="goToPage('product.html')">Products</li>
-          <li>Shop</li>
-          <li>About</li>
-        </div>
-        <div class="footer-content-3" style="flex: 1">
-          <p class="footer-head">Contact</p>
-
-          <li>123 Street, Mississauga, ON</li>
-          <li>weCare@gmail.com</li>
-          <li>1234567890</li>
-        </div>
-      </div> -->
-      <div class="footer-bottom" style="text-align: center">
-        <p>&copy; 2023 We Care Nature</p>
-      </div>
-    </footer>
-
+    <footer class="footer"></footer>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <script>
       let categories = [
         {

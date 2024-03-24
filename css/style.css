@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -94,6 +93,7 @@ body {
   transition: ease-in-out 0.2s;
   background-color: #b8cf69;
 }
+
 .sidebar {
   position: absolute;
   right: 0;
@@ -247,9 +247,9 @@ li.sidebar-items > span:hover {
   }
 }
 @media screen and (max-width: 1024px) {
-  .nav-content-1 ul {
+  /* .nav-content-1 ul {
     display: none;
-  }
+  } */
   .nav-content-2 ul {
     display: none;
   }
@@ -261,6 +261,11 @@ li.sidebar-items > span:hover {
     justify-content: space-between;
   }
 }
+@media screen and (max-width: 1024px) {
+  .nav-content-1 ul {
+    display: none;
+  }
+}
 /* footer*/
 
 .footer-content {
@@ -268,42 +273,18 @@ li.sidebar-items > span:hover {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 250px ;
+  margin-top: 250px;
   /* flex-direction: row; */
   /* justify-content: space-evenly; */
   /* align-content: center; */
   /* flex-wrap: wrap; */
   gap: 10px;
 }
-.footer-content1 {
-  padding: 15px;
-
-  border-bottom: 1px solid black;
-  /* background: green; */
-  min-width: 480px;
-  /* flex: 2 1 0; */
-}
-.footer-content2 {
-  padding: 15px;
-  border-bottom: 1px solid black;
-  /* background: red; */
-  min-width: 480px;
-  /* flex: 1.5 1 0; */
-}
+.footer-content1,
+.footer-content2,
 .footer-content3 {
   padding: 15px;
-  /* background: blue; */
-  border-bottom: 1px solid black;
-
   min-width: 480px;
-  /* flex: 1.5 1 0; */
-}
-.footer-content4 {
-  min-width: 480px;
-
-  padding: 5px 15px;
-  background: yellow;
-  /* flex: 2 1 0; */
 }
 .footer-items {
   display: flex;
@@ -312,4 +293,36 @@ li.sidebar-items > span:hover {
 }
 footer > ul > li {
   text-decoration: none;
+}
+.footer-col-1,
+.footer-col-2 {
+  margin: 5px;
+  padding: 2px;
+}
+.fa-brands:hover {
+  background: white;
+}
+.fa-facebook:hover {
+  color: #0866ff;
+}
+.fa-instagram:hover {
+  color: red;
+}
+.fa-tiktok:hover {
+  color: #000;
+}
+.fa-linkedin:hover {
+  color: #0077b5;
+}
+.fa-brands {
+  border-radius: 2px;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background: #336622;
+  color: white;
+  text-align: center;
+}
+.fa-brands::before {
+  line-height: 30px;
 }

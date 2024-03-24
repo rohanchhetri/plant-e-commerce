@@ -27,7 +27,7 @@ const addProduct = () => {
       <div class="price">$${product.price}</div>
       <div>
       <button class="addCart">Add To Cart</button>
-      <span class="heart"><i class="fa-solid fa-heart"></i></span>
+      <span class="heart"><i class="fa-solid fa-heart hearts"></i></span>
       </div>`;
       productsListHTML.appendChild(newProduct);
     });

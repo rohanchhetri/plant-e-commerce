@@ -5,23 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
     <link rel="shortcut icon" href="/src/favion.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/validation.js"></script>
     <style>
-      #home:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
       .productList {
         display: flex;
         flex-direction: row;
@@ -65,7 +60,7 @@
         cursor: pointer;
         background: #336622;
       }
-      .heart {
+      .hearts {
         background: black;
         color: white;
         padding: 3px 5px;
@@ -73,9 +68,10 @@
         /* font-size: 1.5rem; */
         /* margin-right: -5px; */
       }
-      .heart:hover {
+      .hearts:hover {
         cursor: pointer;
         background: #336622;
+        color: white;
       }
       .back {
         border-radius: 5px;
@@ -93,16 +89,17 @@
     </style>
   </head>
   <body>
-    <header>
-      <p>
-        <span id="home" style="color: grey" onclick="goToPage('index.html')"
-          >Home</span
-        >
-        / Products
-      </p>
-      <h1 style="text-align: center; font-weight: 400">All Products</h1>
-    </header>
-
+    <header class="header"></header>
+    <h1
+      style="
+        text-align: center;
+        font-weight: 400;
+        color: black;
+        margin: 90px 0 25px;
+      "
+    >
+      All Products
+    </h1>
     <main style="display: flex; flex-direction: column; align-items: center">
       <div class="productList">
         <div class="item">
@@ -119,12 +116,14 @@
         </div>
       </div>
       <div>
-        <button class="back" onclick="goToPage('cart.html')">
-          Back to Home
-        </button>
+        <button class="back" onclick="goToPage('cart.html')">Go to Cart</button>
       </div>
     </main>
-
+    <footer class="footer"></footer>
+    <script src="js/header.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/validation.js"></script>
+    <footer class="footer"></footer>
   </body>
 </html>
