@@ -16,12 +16,81 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      .main {
+        margin: 80px 50px -210px 50px;
+      }
+      .faq-lists {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 50px;
+        margin: 15px 0;
+      }
+      .question,
+      .ans {
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        margin: 10px 0;
+        width: 85vw;
+        max-width: 840px;
+        background: whitesmoke;
+        color: #000;
+      }
+      .faq-item {
+        margin-top: 10px;
+      }
+      .ans {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <header class="header"></header>
+    <main class="main">
+      <div class="contact-form">
+        <form action="" method="post" id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+
+      <div class="faq-container">
+        <h1 style="font-size: 1.5em; font-weight: 500; text-align: center">
+          Frequently Asked Questions
+        </h1>
+        <div class="faq-lists">
+          <!-- <div class="faq">
+            <div class="faq-item">
+              <p>What type of plants do you offer?</p>
+              <i class="fa-solid fa-plus" style="color: #000"></i>
+            </div>
+            <div class="ans">
+              <p>
+                We offer a wide variety of indoor and outdoor plants, including
+                succulents, cacti, flowering plants, foliage plants, herbs, and
+                more.
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <hr style="margin-top: 50px" />
+    </main>
+
     <footer class="footer"></footer>
     <script src="js/header.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/faq.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
   </body>
