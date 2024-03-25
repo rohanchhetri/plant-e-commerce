@@ -16,18 +16,207 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      .main {
+        margin: 80px 50px -150px 50px;
+        text-align: center;
+      }
+      .about_us {
+        margin: 40px 0;
+      }
+      .about_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin: 20px 10px;
+      }
+
+      .about_img {
+        flex: 1;
+        background: red;
+        width: 45%;
+        min-width: 420px;
+        min-height: 360px;
+        max-height: 60vh;
+        border-radius: 10px;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+      }
+      .about_text {
+        flex: 1;
+        width: 45%;
+        min-width: 480px;
+        margin: 0 10px;
+        text-align: left;
+        font-size: 1.1em;
+        font-weight: 500;
+        line-height: 2;
+      }
+      .container {
+        margin: 50px 0;
+      }
+      .members {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0;
+        font-size: 1em;
+      }
+      .circle {
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+        color: black;
+        width: 380px;
+        min-height: 420px;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        transition: ease 0.5s;
+        img {
+          transition: ease 0.5s;
+        }
+      }
+      .circle:hover {
+        transform: scale(1.1);
+        transition: ease 0.5s;
+      }
+      .circle > img:hover {
+        transform: rotateY(180deg);
+        transition: ease 0.5s;
+      }
+      .person {
+        font-size: large;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      .link {
+        border-radius: 50%;
+        transform: scale(1.2);
+        background: black;
+        margin: 10px 0 10px 10px;
+      }
+      .link:hover {
+        cursor: pointer;
+      }
+      .fa-twitter:hover {
+        color: #00acee;
+      }
+      .fa-github:hover {
+        color: black;
+      }
+      @media screen and (max-width: 1107px) {
+        #txt {
+          order: 4;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="header" contenteditable="false"></header>
-    <div class="container">
-      <p>
-        These are the faces behind the shop and the website. We're excited to
-        get to know you!
-      </p>
-    </div>
+    <header class="header"></header>
+    <main class="main">
+      <h1
+        style="
+          text-align: center;
+          font-weight: 400;
+          color: black;
+          margin: 90px 0 25px;
+        "
+      >
+        Our Story
+      </h1>
+      <div class="about_us">
+        <div class="about_content">
+          <img src="src/login-bg - Copy.jpg" alt="" class="about_img" />
+          <p class="about_text">
+            We are a team of passionate web developers with a love for plants
+            and technology. Our goal is to make it easy for you to find the
+            perfect plants for your home. Whether you're a seasoned plant
+            enthusiast or just starting your journey, we're here to help you
+            discover and care for beautiful greenery that will brighten up your
+            space.
+          </p>
+          <p class="about_text" id="txt">
+            At We Care Nature, we've combined our expertise in web development
+            with our passion for plants to create a seamless shopping experience
+            for you. Our carefully curated selection of plants is designed to
+            cater to every lifestyle and space, so you can find exactly what you
+            need to create your own green oasis.
+          </p>
+          <img src="src/login-bg.jpg" alt="" class="about_img" />
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="/src/login_bg.jpg"
+            alt=""
+            style="
+              min-width: 400px;
+              width: 80vw;
+              min-height: 320px;
+              max-height: 80vh;
+              /* height: 80vh; */
+
+              border-radius: 10px;
+              margin: 50px 0;
+              box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+            "
+          />
+          <p class="about_text" style="text-align: center">
+            We're committed to providing you with the highest quality plants and
+            exceptional customer service. If you have any questions or need
+            assistance, our team is always here to help.
+          </p>
+          <p
+            class="about_text"
+            style="font-size: 1.5em; width: fit-content; margin-top: 20px"
+          >
+            Thank you for choosing We Care Nature. Happy shopping!
+          </p>
+        </div>
+      </div>
+      <!-- <div style="text-align: left">
+        <p>
+          We are a team of passionate web developers with a love for plants and
+          technology. Our goal is to make it easy for you to find the perfect
+          plants for your home. Whether you're a seasoned plant enthusiast or
+          just starting your journey, we're here to help you discover and care
+          for beautiful greenery that will brighten up your space.
+        </p>
+        <p>
+         
+        </p>
+        <p>
+          We're committed to providing you with the highest quality plants and
+          exceptional customer service. If you have any questions or need
+          assistance, our team is always here to help.
+        </p>
+        <p>Thank you for choosing We Care Nature. Happy shopping!</p>
+      </div> -->
+      <hr />
+      <div class="container">
+        <p style="font-size: x-large; padding-bottom: 20px">
+          These are the faces behind the shop and the website. We're excited to
+          get to know you!
+        </p>
+        <div class="members"></div>
+      </div>
+    </main>
     <footer class="footer"></footer>
     <script src="js/header.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/member.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
   </body>

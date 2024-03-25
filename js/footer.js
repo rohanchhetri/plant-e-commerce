@@ -5,7 +5,7 @@ document.querySelectorAll(".footer").forEach((footer) => {
       <p>Contact Us</p>
       <hr style="width: 100px; border: 1px solid black" />
       <ul class="footer-items">
-        <span class="footer-col-1">122 Mississauga</span>
+        <span class="footer-col-1">911 Mississauga Rd, ON</span>
         <span class="footer-col-1">weCare@gmail.com</span>
         <span class="footer-col-1">1234567890</span>
       </ul>
@@ -44,6 +44,6 @@ document.querySelectorAll(".footer").forEach((footer) => {
       padding: 20px 0;
     "
   >
-    <p>&copy; 2023 We Care Nature</p>
+    <p>&copy; 2024 We Care Nature</p>
   </div>`;
 });

@@ -59,8 +59,8 @@ headers.forEach((header) => {
             <span>Wishlist</span>
             <i class="fa-solid fa-heart sidebar-items-icons"></i>
           </li>
-          <li class="sidebar-items">
-            <span onclick="goToPage('cart.html')">Cart</span>
+          <li class="sidebar-items" onclick="goToPage('cart.html')">
+            <span >Cart</span>
             <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
           </li>
 
