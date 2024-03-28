@@ -145,7 +145,7 @@ li.sidebar-items > span:hover {
 .main-content {
   height: 650px;
   display: flex;
-  background-image: url("/src/login_bg.jpg");
+  background-image: url("/src/main_section_img1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -19,10 +19,12 @@
     <style>
       .main {
         margin: 0 50px -210px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .contact-img {
-        margin: 70px 0 30px 0;
-
+        margin: 70px 0 20px 0;
         background-image: url("/src/login-bg.jpg");
         background-size: cover;
         background-position: center;
@@ -48,6 +50,12 @@
         background: rgba(0, 0, 0, 0.5);
         z-index: 0;
       }
+      .content > h1 {
+        transition: ease-in 1s;
+      }
+      .conten > h1::before {
+        transition: ease-out 1s;
+      }
       .content,
       .social {
         z-index: 1;
@@ -69,8 +77,8 @@
       }
       .connect:hover {
         cursor: pointer;
-        scale: 1.8;
       }
+
       .fa-twitter:hover {
         color: #00acee;
       }
@@ -79,6 +87,81 @@
       }
       .fa-youtube:hover {
         color: #ff0000;
+      }
+      .contact-form {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .form {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        /* background: grey; */
+        display: flex;
+        margin: 50px 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 500px;
+        min-width: 400px;
+        width: 40vw;
+        color: black;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .form input,
+      .form textarea {
+        font-size: 1em;
+        min-width: 360px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: whitesmoke;
+      }
+      #contact-submit {
+        font-size: 0.8em;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background: #336622;
+        color: white;
+        cursor: pointer;
+      }
+
+      .submit-msg {
+        display: none;
+
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0;
+        top: 50;
+        z-index: 1;
+        /* margin: 120px 0; */
+        background: white;
+        color: black;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 20px 30px;
+        border-radius: 10px;
+        min-width: 400px;
+        width: 40vw;
+        text-align: start;
+        min-height: 240px;
+        button {
+          padding: 10px 40px;
+          width: fit-content;
+          border-radius: 10px;
+          border: none;
+          background: #336622;
+          color: white;
+          cursor: pointer;
+        }
       }
 
       .faq-lists {
@@ -114,7 +197,14 @@
     <header class="header"></header>
     <div class="contact-img">
       <div class="content">
-        <h1 style="font-weight: 500">Bonjour!</h1>
+        <h1
+          style="
+            font-weight: 500;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          "
+        >
+          Hello !
+        </h1>
         <p style="font-size: 1.5em; padding: 10px">How can we help you?</p>
         <input type="text" placeholder="Search" />
       </div>
@@ -132,17 +222,54 @@
       </div>
     </div>
     <main class="main">
-      <!-- <div class="contact-form">
-        <form action="" method="post" id="contact-form">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-          <label for="message">Message</label>
-          <textarea name="message" id="message"></textarea>
-          <button type="submit" class="btn">Submit</button>
-        </form>
-      </div> -->
+      <div class="contact-form">
+        <!-- <p style="font-size: 1.2em; text-align: center; max-width: 400px">
+          We'd love to hear from you! Please fill out the form below and we will
+          get back to you as soon as possible.
+        </p> -->
+        <div class="form">
+          <h1 style="font-size: 1.8em; font-weight: 500; text-align: center">
+            Contact Us
+          </h1>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter you name"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter you email"
+          />
+          <textarea
+            maxlength="300"
+            rows="5"
+            name="message"
+            id="message"
+            placeholder="Enter your message"
+            style="resize: none; height: 150px"
+          ></textarea>
+          <button id="contact-submit" onclick="toggleDisplay()">Submit</button>
+        </div>
+        <div class="submit-msg">
+          <h1 style="font-size: 1.5em; font-weight: 500; text-align: center">
+            Thank you for reaching out!
+          </h1>
+          <p style="font-size: 1em">
+            We have received your message and will get back to you as soon as
+            possible.
+          </p>
+          <button
+            onclick="
+             toggleDisplay()
+             "
+          >
+            ok
+          </button>
+        </div>
+      </div>
 
       <div class="faq-container">
         <h1 style="font-size: 1.5em; font-weight: 500; text-align: center">
@@ -173,5 +300,73 @@
     <script src="js/faq.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
+    <script>
+      let hello = ["Bonjour", "Hola", "Ciao", "Namaste", "Konnichiwa"];
+      let i = 0;
+      setInterval(() => {
+        document.querySelector(".content h1").textContent = hello[i] + " !";
+        i++;
+        if (i === hello.length) {
+          i = 0;
+        }
+      }, 2000);
+
+      function toggleDisplay() {
+        if ($(".form").css("visibility") === "hidden") {
+          $(".form").css("visibility", "visible");
+          $(".submit-msg").css("display", "none");
+        } else {
+          $(".form").css("visibility", "hidden");
+          $(".submit-msg").css("display", "flex");
+        }
+      }
+      // Function to scale up the element and set text color
+      function scaleUp(element, textColor, link) {
+        element.style.transform = "scale(1.1)";
+        element.setAttribute("title", link);
+        element.style.color = textColor;
+        element.style.backgroundColor = "white";
+      }
+
+      // Function to scale down the element and reset text color and background color
+      function scaleDown(element) {
+        element.style.transform = "scale(1)";
+        element.style.color = "white"; // Reset text color
+        element.style.backgroundColor = "black"; // Set background color to white
+      }
+
+      // Get all elements with the class "connect"
+      const items = document.querySelectorAll(".connect");
+      let currentIndex = 0;
+
+      // Array of colors
+      const colors = [
+        "#0866ff",
+        "red",
+        "#00acee",
+        "#25d366",
+        "black",
+        "#ff0000",
+      ];
+
+      const links = [
+        "https://www.facebook.com",
+        "https://www.instagram.com",
+        "https://www.twitter.com",
+        "https://www.whatsapp.com",
+        "https://www.tiktok.com",
+        "https://www.youtube.com",
+      ];
+
+      function applyScaling() {
+        scaleUp(items[currentIndex], colors[currentIndex], links[currentIndex]);
+        setTimeout(() => {
+          scaleDown(items[currentIndex]);
+          currentIndex = (currentIndex + 1) % items.length;
+          setTimeout(applyScaling, 1000);
+        }, 1000);
+      }
+      applyScaling();
+    </script>
   </body>
 </html>

@@ -81,6 +81,25 @@
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script>
+      let mainBG = [
+        "/src/main_section_img2.jpg",
+        "/src/main_section_img3.jpg",
+        "/src/main_section_img4.jpg",
+        "/src/main_section_img5.jpg",
+      ];
+      let mainBGIndex = 0;
+      let mainContent = document.querySelector(".main-content");
+
+      function changeBg() {
+        mainContent.style.backgroundImage = `url(${mainBG[mainBGIndex]})`;
+        mainBGIndex++;
+        if (mainBGIndex == mainBG.length) {
+          mainBGIndex = 0;
+        }
+      }
+      setInterval(changeBg, 3000);
+    </script>
+    <script>
       let categories = [
         {
           type: "Jungle Plants",

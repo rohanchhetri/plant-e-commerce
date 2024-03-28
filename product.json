@@ -1,74 +1,200 @@
 [
   {
     "id": "1",
-    "name": "Bamboo Plant",
+    "name": "African Violet",
     "price": 12,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "image": "src/product_images/African Violet.webp"
   },
   {
     "id": "2",
-    "name": "Palm Tree",
-    "price": 10,
-    "image": "/src/product_images/palm_tree.webp"
+    "name": "Aloe Vera",
+    "price": 12,
+    "image": "src/product_images/Aloe Vera.webp"
   },
   {
     "id": "3",
-    "name": "Ficus Tree",
-    "price": 10,
-    "image": "/src/product_images/ficus_tree.jpg"
-  },
-  {
-    "id": "3",
-    "name": " Potted Plants",
-    "price": 10,
-    "image": "/src/product_images/fauxpotted_plants.webp"
+    "name": "Basil",
+    "price": 12,
+    "image": "src/product_images/Basil.webp"
   },
   {
     "id": "4",
-    "name": "Peperomania Watermelon",
-    "price": 10,
-    "image": "/src/product_images/peperomania_watermelon.webp"
+    "name": "Bird's Nest Anthurium",
+    "price": 12,
+    "image": "src/product_images/Bird's Nest Anthurium.webp"
   },
   {
     "id": "5",
-    "name": "Bamboo",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Boston Fern",
+    "price": 12,
+    "image": "src/product_images/Boston Fern.webp"
   },
   {
     "id": "6",
-    "name": "Rose",
-    "price": 10,
-    "image": "/src/product_images/rose_plant.webp"
-  },
-  {
-    "id": "6",
-    "name": "name",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Bromeliads",
+    "price": 12,
+    "image": "src/product_images/Bromeliads.webp"
   },
   {
     "id": "7",
-    "name": " Name",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Cactus",
+    "price": 12,
+    "image": "src/product_images/Cactus.webp"
   },
   {
     "id": "8",
-    "name": " Name",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Chinese Evergreen",
+    "price": 12,
+    "image": "src/product_images/Chinese Evergreen.webp"
   },
   {
     "id": "9",
-    "name": " Name",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Croton",
+    "price": 12,
+    "image": "src/product_images/Croton.webp"
   },
   {
     "id": "10",
-    "name": " Name",
-    "price": 10,
-    "image": "/src/product_images/bambo_plant.jpg"
+    "name": "Dumb Cane Plant",
+    "price": 12,
+    "image": "src/product_images/Dumb Cane Plant.webp"
+  },
+  {
+    "id": "11",
+    "name": "English Ivy",
+    "price": 12,
+    "image": "src/product_images/English Ivy.webp"
+  },
+  {
+    "id": "12",
+    "name": "Fiddle Leaf Fig",
+    "price": 12,
+    "image": "src/product_images/Fiddle Leaf Fig.webp"
+  },
+  {
+    "id": "13",
+    "name": "Golden Pothos",
+    "price": 12,
+    "image": "src/product_images/Golden Pothos.webp"
+  },
+  {
+    "id": "14",
+    "name": "Heartleaf Philodendron",
+    "price": 12,
+    "image": "src/product_images/Heartleaf Philodendron.webp"
+  },
+  {
+    "id": "15",
+    "name": "Homalomena Selby",
+    "price": 12,
+    "image": "src/product_images/Homalomena Selby.webp"
+  },
+  {
+    "id": "16",
+    "name": "Jade Plant",
+    "price": 12,
+    "image": "src/product_images/Jade Plant.webp"
+  },
+  {
+    "id": "17",
+    "name": "Jasmine Plant",
+    "price": 12,
+    "image": "src/product_images/Jasmine Plant.webp"
+  },
+  {
+    "id": "18",
+    "name": "Kalanchoe",
+    "price": 12,
+    "image": "src/product_images/Kalanchoe.webp"
+  },
+  {
+    "id": "19",
+    "name": "Lucky Bamboo",
+    "price": 12,
+    "image": "src/product_images/Lucky Bamboo.webp"
+  },
+  {
+    "id": "20",
+    "name": "Money Tree",
+    "price": 12,
+    "image": "src/product_images/Money Tree.webp"
+  },
+  {
+    "id": "21",
+    "name": "Monstera Deliciosa",
+    "price": 12,
+    "image": "src/product_images/Monstera Deliciosa.webp"
+  },
+  {
+    "id": "22",
+    "name": "Moth Orchid",
+    "price": 12,
+    "image": "src/product_images/Moth Orchid.webp"
+  },
+  {
+    "id": "23",
+    "name": "Oyster Plant",
+    "price": 12,
+    "image": "src/product_images/Oyster Plant.webp"
+  },
+  {
+    "id": "24",
+    "name": "Peace Lily",
+    "price": 12,
+    "image": "src/product_images/Peace Lily.webp"
+  },
+  {
+    "id": "25",
+    "name": "Pilea",
+    "price": 12,
+    "image": "src/product_images/Pilea.webp"
+  },
+  {
+    "id": "26",
+    "name": "Polka Dot Begonia",
+    "price": 12,
+    "image": "src/product_images/Polka Dot Begonia.webp"
+  },
+  {
+    "id": "27",
+    "name": "Rubber Plant",
+    "price": 12,
+    "image": "src/product_images/Rubber Plant.webp"
+  },
+  {
+    "id": "28",
+    "name": "Snake Plant",
+    "price": 12,
+    "image": "src/product_images/Snake Plant.webp"
+  },
+  {
+    "id": "29",
+    "name": "Spider Plant",
+    "price": 12,
+    "image": "src/product_images/Spider Plant.webp"
+  },
+  {
+    "id": "30",
+    "name": "String of Pearls",
+    "price": 12,
+    "image": "src/product_images/String of Pearls.webp"
+  },
+  {
+    "id": "31",
+    "name": "Sweetheart Plant",
+    "price": 12,
+    "image": "src/product_images/Sweetheart Plant.webp"
+  },
+  {
+    "id": "32",
+    "name": "Umbrella Plant",
+    "price": 12,
+    "image": "src/product_images/Umbrella Plant.webp"
+  },
+  {
+    "id": "33",
+    "name": "ZZ Plant",
+    "price": 12,
+    "image": "src/product_images/ZZ Plant.webp"
   }
 ]

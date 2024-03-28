@@ -181,10 +181,45 @@
       <hr style="margin-top: 30px" />
     </main>
     <footer class="footer"></footer>
+
     <script src="js/header.js"></script>
     <script src="js/script.js"></script>
     <script src="js/member.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
+    <script>
+      // document.querySelectorAll(".circle").forEach((circle) => {
+      //   set(() => {
+      //     circle.style.transform = "scale(1.1)";
+      //   }, 1000);
+      // });
+
+      // Function to scale up the element and set text color
+      function scaleUp(element) {
+        element.style.transform = "scale(1.1)";
+      }
+
+      // Function to scale down the element and reset text color and background color
+      function scaleDown(element) {
+        element.style.transform = "scale(1)";
+      }
+      const items = document.querySelectorAll(".circle");
+      // Get all elements with the class "connect"
+      let currentIndex = 0; // Initialize index to keep track of the current item
+
+      function applyScaling() {
+        // Scale up the current item with the corresponding color
+        scaleUp(items[currentIndex]);
+        // Revert to original size after 1 second
+        setTimeout(() => {
+          scaleDown(items[currentIndex]);
+          // Move to the next item
+          currentIndex = (currentIndex + 1) % items.length;
+          // Call the function recursively after 2 seconds
+          setTimeout(applyScaling, 1000);
+        }, 1000);
+      }
+      applyScaling();
+    </script>
   </body>
 </html>

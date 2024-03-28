@@ -62,23 +62,23 @@
       .cart-item,
       .cart-details {
         display: flex;
-        /* justify-content: space-evenly; */
+        justify-content: start;
         align-items: center;
-        max-width: 300px;
         line-height: 0;
       }
       .item-image {
-        min-width: 72px;
-        width: 20%;
-        min-height: 96px;
-
-        padding: 5px 15px;
+        width: 160px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 5px 15px;
       }
       .item-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* padding: 5px 15px; */
+        align-items: start;
+        padding: 5px 15px;
       }
       #delete {
         color: red;
@@ -106,6 +106,19 @@
       .decrease_qty:hover {
         cursor: pointer;
         background: black;
+      }
+
+      @media screen and (max-width: 920px) {
+        .cart-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+        }
+        .item-info {
+          align-items: start;
+          padding: 5px 15px;
+        }
       }
     </style>
     <script src="/js/validation.js"></script>
