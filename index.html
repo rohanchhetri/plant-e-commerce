@@ -32,6 +32,39 @@
         transform: scale(1.1);
         transition: ease 0.5s;
       }
+      .featured-section {
+        width: 100%;
+        overflow-x: scroll; /* Hide overflow to hide scrollbar */
+        white-space: nowrap; /* Prevent items from wrapping */
+        position: relative; /* Position relative for absolute positioning of items */
+      }
+
+      .scroll-container {
+        padding: 50px 0;
+        white-space: nowrap; /* Prevent items from wrapping */
+        display: inline-block; /* Ensure horizontal scrolling */
+        transition: transform 1s ease; /* Smooth transition for scrolling */
+      }
+
+      .featured-item {
+        display: inline-block;
+        min-width: 600px;
+        /* width: 70%; */
+        min-height: 360px;
+        height: 35vh; /* Set the height of each featured item */
+
+        margin-left: 40px; /* Adjust spacing between items */
+      }
+
+      .featured-section::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+      }
+      .cat-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -48,7 +81,15 @@
         </div> -->
       </div>
       <p class="sub-head">Featured Products</p>
-      <div class="plant-categories" style="overflow: scroll;"></div>
+      <div class="featured-section">
+        <div class="scroll-container" id="scrollContainer"></div>
+      </div>
+      <!-- <div class="featured-section">
+        <div class="scroll-container" id="scrollContainer">
+          Images and titles from the array will be inserted here
+        </div>
+      </div> -->
+      <!-- <div class="plant-categories" style="overflow: scroll;"></div> -->
       <p class="sub-head">
         Love and work are to people what water and sunshine are to plants
       </p>
@@ -102,41 +143,73 @@
     <script>
       let categories = [
         {
-          type: "Jungle Plants",
-          url: "/src/jungle-plant.jpg",
-          alt: "Jungle plants categories",
-          id: "jungle-plant",
+          id: "17",
+          name: "Jasmine Plant",
+          image: "src/product_images/Jasmine Plant.webp",
         },
         {
-          type: "Outdoor Plants",
-          url: "/src/outdoor-plant.webp",
-          alt: "Outdoor plants categories",
-          id: "outdoor-plant",
+          id: "18",
+          name: "Kalanchoe",
+          image: "src/product_images/Kalanchoe.webp",
         },
         {
-          type: "Bedroom Plants",
-          url: "/src/bedroom-plant.jpg",
-          alt: "Bedroom plants categories",
-          id: "bedroom-plant",
+          id: "19",
+          name: "Lucky Bamboo",
+          image: "src/product_images/Lucky Bamboo.webp",
         },
         {
-          type: "Indoor Plants",
-          url: "/src/indoor-plant.jpg",
-          alt: "Indoor plants categories",
-          id: "indoor-plant",
+          id: "20",
+          name: "Money Tree",
+          image: "src/product_images/Money Tree.webp",
+        },
+        {
+          id: "21",
+          name: "Monstera Deliciosa",
+          image: "src/product_images/Monstera Deliciosa.webp",
         },
       ];
+
       $(document).ready(function () {
-        let categoriesList = $(".plant-categories");
+        let container = $("#scrollContainer");
 
         for (let i = 0; i < categories.length; i++) {
-          categoriesList.append(`
-          <div class= "categories-list" id = "${categories[i].id}">
-            <img src = "${categories[i].url}" alt = "${categories[i].alt} class = "cat-img" />
-            <p class = "cat-title">${categories[i].type}</p>
+          container.append(`
+            <div class="featured-item" id="${categories[i].id}">
+              <img src="${categories[i].image}" alt="${categories[i].name} plant" class="cat-img" />
+              <p class="cat-title">${categories[i].name}</p>
             </div>`);
         }
+
+        window.onload = function () {
+          const container = document.getElementById("scrollContainer");
+          const items = document.querySelectorAll(".featured-item");
+          const containerWidth = container.offsetWidth;
+          const itemWidth = items[0].offsetWidth + 40;
+          const totalItems = items.length;
+          let currentIndex = 0;
+
+          function scrollNext() {
+            currentIndex++;
+            if (currentIndex >= totalItems) {
+              currentIndex = 0; // Reset currentIndex to show the first item
+              container.style.transition = "none"; // Disable transition to prevent animation
+              container.style.transform = `translateX(${
+                totalItems * itemWidth
+              }px)`; // Move container to the right
+              setTimeout(() => {
+                container.style.transition = ""; // Re-enable transition
+                container.style.transform = `translateX(0px)`; // Move back to the beginning
+              }, 50); // A small delay to allow the transition reset
+            } else {
+              const translateX = -currentIndex * itemWidth;
+              container.style.transform = `translateX(${translateX}px)`;
+            }
+          }
+
+          setInterval(scrollNext, 2000);
+        };
       });
+
       let validUser = localStorage.getItem("username");
       let homeUser = document.querySelectorAll(".home_user");
       let login = document.querySelectorAll(".isLogged");
@@ -148,10 +221,6 @@
           login[i].innerHTML = "Sign Out";
         }
       }
-      // let username = document.getElementById("home_user");
-      // document.getElementById("home_user");
-
-      // username.innerHTML =
     </script>
   </body>
 </html>
