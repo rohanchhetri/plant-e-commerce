@@ -179,7 +179,6 @@
               <p class="cat-title">${categories[i].name}</p>
             </div>`);
         }
-
         window.onload = function () {
           const container = document.getElementById("scrollContainer");
           const items = document.querySelectorAll(".featured-item");
@@ -187,27 +186,46 @@
           const itemWidth = items[0].offsetWidth + 40;
           const totalItems = items.length;
           let currentIndex = 0;
-
           function scrollNext() {
             currentIndex++;
             if (currentIndex >= totalItems) {
               currentIndex = 0; // Reset currentIndex to show the first item
-              container.style.transition = "none"; // Disable transition to prevent animation
-              container.style.transform = `translateX(${
-                totalItems * itemWidth
-              }px)`; // Move container to the right
-              setTimeout(() => {
-                container.style.transition = ""; // Re-enable transition
-                container.style.transform = `translateX(0px)`; // Move back to the beginning
-              }, 50); // A small delay to allow the transition reset
-            } else {
-              const translateX = -currentIndex * itemWidth;
-              container.style.transform = `translateX(${translateX}px)`;
             }
+            const translateX = -currentIndex * itemWidth;
+            container.style.transform = `translateX(${translateX}px)`;
           }
 
           setInterval(scrollNext, 2000);
         };
+
+        // window.onload = function () {
+        //   const container = document.getElementById("scrollContainer");
+        //   const items = document.querySelectorAll(".featured-item");
+        //   const containerWidth = container.offsetWidth;
+        //   const itemWidth = items[0].offsetWidth + 40;
+        //   const totalItems = items.length;
+        //   let currentIndex = 0;
+
+        //   function scrollNext() {
+        //     currentIndex++;
+        //     if (currentIndex >= totalItems) {
+        //       currentIndex = 0; // Reset currentIndex to show the first item
+        //       container.style.transition = "none"; // Disable transition to prevent animation
+        //       container.style.transform = `translateX(${
+        //         totalItems * itemWidth
+        //       }px)`; // Move container to the right
+        //       setTimeout(() => {
+        //         container.style.transition = ""; // Re-enable transition
+        //         container.style.transform = `translateX(0px)`; // Move back to the beginning
+        //       }, 50); // A small delay to allow the transition reset
+        //     } else {
+        //       const translateX = -currentIndex * itemWidth;
+        //       container.style.transform = `translateX(${translateX}px)`;
+        //     }
+        //   }
+
+        //   setInterval(scrollNext, 2000);
+        // };
       });
 
       let validUser = localStorage.getItem("username");
