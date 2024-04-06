@@ -1,5 +1,13 @@
 document.querySelectorAll(".footer").forEach((footer) => {
   footer.innerHTML = `
+  <div class="newsletter">
+    <p>Newsletter</p>
+    <div>
+      Subscribe to our newsletter to get updates on our latest offers!
+    </div>
+    <div><input type="email" /><button>Subscribe</button></div>
+    <span style="display: none" id="subscribemsg"></span>
+  </div>
   <div class="footer-content">
     <div class="footer-content1">
       <p>Contact Us</p>
@@ -18,7 +26,6 @@ document.querySelectorAll(".footer").forEach((footer) => {
         <span class="footer-col-2" onclick="goToPage('product.html')"
           >Products</span
         >
-        <span class="footer-col-2">Shop</span>
         <span class="footer-col-2" onclick="goToPage('about.html')"
           >About</span
         >
@@ -30,11 +37,11 @@ document.querySelectorAll(".footer").forEach((footer) => {
       <ul class="footer-items">
         <span><i class="fa-brands fa-facebook"></i> Facebook</span>
         <span><i class="fa-brands fa-instagram"></i> Instagram</span>
-        <span><i class="fa-brands fa-tiktok"></i> Youtube</span>
-        <span><i class="fa-brands fa-linkedin"></i> LinkedIn </span>
+        <span><i class="fa-brands fa-tiktok"></i> Tiktok</span>
       </ul>
     </div>
   </div>
+
   <div
     class="footer-bottom"
     style="
@@ -45,5 +52,29 @@ document.querySelectorAll(".footer").forEach((footer) => {
     "
   >
     <p>&copy; 2024 We Care Nature</p>
-  </div>`;
+  </div>
+`;
 });
+
+function ntg() {
+  document
+    .querySelector(".newsletter button")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      let validEmail = document
+        .querySelector(".newsletter input")
+        .value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+      let msg = document.querySelector(".newsletter #subscribemsg");
+
+      if (validEmail) {
+        msg.innerHTML = "Thank you for subscribing to our newsletter";
+        msg.style.display = "block";
+        msg.style.color = "green";
+      } else {
+        msg.innerHTML = "Please enter a valid email";
+        msg.style.display = "block";
+        msg.style.color = "red";
+      }
+    });
+}
+ntg();

@@ -18,7 +18,7 @@
     ></script>
     <style>
       .main {
-        margin: 0 50px -210px 50px;
+        margin: 0 50px 0 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -206,7 +206,7 @@
           Hello !
         </h1>
         <p style="font-size: 1.5em; padding: 10px">How can we help you?</p>
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" id="help_search" />
       </div>
 
       <div class="social">
@@ -293,7 +293,6 @@
       </div>
       <hr style="margin-top: 50px" />
     </main>
-
     <footer class="footer"></footer>
     <script src="js/header.js"></script>
     <script src="js/script.js"></script>
@@ -301,7 +300,19 @@
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
     <script>
-      let hello = ["Bonjour", "Hola", "Ciao", "Namaste", "Konnichiwa"];
+      let input = document.querySelector("#help_search");
+      input.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+          e.preventDefault();
+          performGoogleSearch();
+        }
+      });
+      let performGoogleSearch = () => {
+        let searchQuery = input.value;
+        window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
+      };
+
+      let hello = ["Bonjour", "Hola", "Ciao", "Namaste", "Konnichiwa", "Hello"];
       let i = 0;
       setInterval(() => {
         document.querySelector(".content h1").textContent = hello[i] + " !";

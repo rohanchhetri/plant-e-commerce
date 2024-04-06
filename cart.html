@@ -199,7 +199,7 @@
       <div>
         <h2>Thank you for your purchase</h2>
         <p>Your order has been placed successfully</p>
-        <p>Order number: 1234567890</p>
+        <p>Order number: <span id="order_id"> 1234567890</span></p>
         <p>Order total: $<span id="final_total">00.00</span></p>
       </div>
       <div>
@@ -220,5 +220,13 @@
     </div>
     <footer class="footer"></footer>
     <script src="/js/script.js"></script>
+    <script>
+      function generateOrderID() {
+        document.getElementById("order_id").innerText = Math.floor(
+          Math.random() * 10000000000
+        );
+      }
+      generateOrderID();
+    </script>
   </body>
 </html>

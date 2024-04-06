@@ -14,24 +14,18 @@ headers.forEach((header) => {
           <ul style="font-size: 18px">
             <li onclick="goToPage('index.html')">Home</li>
             <li onclick="goToPage('product.html')">Products</li>
-            <li>Shop</li>
-            <li onclick="goToPage('about.html')">About</li>
+            <li onclick="goToPage('about.html')">About Us</li>
             <li onclick="goToPage('contact.html')">Contact</li>
           </ul>
         </div>
         <div class="nav-content-2">
           <ul>
             <li>
-              <span><i class="fa-solid fa-magnifying-glass"></i></span>
-            </li>
-            <li>
               <span onclick="toggleDisplay('sidebar_1')"
                 ><i class="fa-solid fa-user"></i
               ></span>
             </li>
-            <li>
-              <span><i class="fa-solid fa-heart"></i></span>
-            </li>
+           
             <li>
               <span onclick="goToPage('cart.html')"
                 ><i class="fa-solid fa-cart-shopping"></i

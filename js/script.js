@@ -25,10 +25,8 @@ const addProduct = () => {
       />
       <span class="productName">${product.name}</span>
       <div class="price">$${product.price}</div>
-      <div>
       <button class="addCart">Add To Cart</button>
-      <span class="heart"><i class="fa-solid fa-heart hearts"></i></span>
-      </div>`;
+      `;
       productsListHTML.appendChild(newProduct);
     });
   }
@@ -67,6 +65,7 @@ const addToCart = () => {
       const productName = item.querySelector(".productName").innerHTML;
       const itemPrice = item.querySelector(".price").innerHTML;
       const imgSrc = item.querySelector("img").getAttribute("src");
+      const btn = item.querySelector(".addCart");
 
       // Check if the product already exists in the cart
       const existingItemIndex = cartList.findIndex(
@@ -90,7 +89,12 @@ const addToCart = () => {
       // Save the updated cartList array to localStorage
       setCartList();
 
-      alert(productName + " added to cart");
+      btn.style.backgroundColor = "#336622";
+      btn.textContent = "Added";
+      setTimeout(() => {
+        btn.style.backgroundColor = "#333";
+        btn.textContent = "Add To Cart";
+      }, 1000);
     });
   });
 };

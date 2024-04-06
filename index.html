@@ -93,7 +93,7 @@
       <p class="sub-head">
         Love and work are to people what water and sunshine are to plants
       </p>
-      <div class="blog-section">
+      <!-- <div class="blog-section">
         <div class="blog" id="blog-1" style="height: 250px">
           <img
             src="/src/interior-plant.jpg"
@@ -116,9 +116,10 @@
             How to water your freaking plants so they don't die afrer one week
           </p>
         </div>
-      </div>
+      </div> -->
     </main>
     <footer class="footer"></footer>
+    <!-- <footer class="footer"></footer> -->
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script>
@@ -188,7 +189,7 @@
           let currentIndex = 0;
           function scrollNext() {
             currentIndex++;
-            if (currentIndex >= totalItems) {
+            if (currentIndex >= totalItems - 1) {
               currentIndex = 0; // Reset currentIndex to show the first item
             }
             const translateX = -currentIndex * itemWidth;
@@ -197,35 +198,6 @@
 
           setInterval(scrollNext, 2000);
         };
-
-        // window.onload = function () {
-        //   const container = document.getElementById("scrollContainer");
-        //   const items = document.querySelectorAll(".featured-item");
-        //   const containerWidth = container.offsetWidth;
-        //   const itemWidth = items[0].offsetWidth + 40;
-        //   const totalItems = items.length;
-        //   let currentIndex = 0;
-
-        //   function scrollNext() {
-        //     currentIndex++;
-        //     if (currentIndex >= totalItems) {
-        //       currentIndex = 0; // Reset currentIndex to show the first item
-        //       container.style.transition = "none"; // Disable transition to prevent animation
-        //       container.style.transform = `translateX(${
-        //         totalItems * itemWidth
-        //       }px)`; // Move container to the right
-        //       setTimeout(() => {
-        //         container.style.transition = ""; // Re-enable transition
-        //         container.style.transform = `translateX(0px)`; // Move back to the beginning
-        //       }, 50); // A small delay to allow the transition reset
-        //     } else {
-        //       const translateX = -currentIndex * itemWidth;
-        //       container.style.transform = `translateX(${translateX}px)`;
-        //     }
-        //   }
-
-        //   setInterval(scrollNext, 2000);
-        // };
       });
 
       let validUser = localStorage.getItem("username");

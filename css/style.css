@@ -66,7 +66,7 @@ body {
 }
 
 .logo {
-  margin: 0.5em 1em 0 1em;
+  margin: 0.5em 1em 0 0em;
 }
 .logo > img {
   overflow: hidden;
@@ -75,11 +75,12 @@ body {
 
 #bars {
   list-style-type: none;
-  font-size: 40px;
+  font-size: 35px;
   display: none;
 }
 .bars {
   background-color: #336622;
+  border-radius: 5px;
   padding: 0 10px;
   color: white;
 }
@@ -224,7 +225,7 @@ li.sidebar-items > span:hover {
     height: 40px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 928px) {
   /* .nav-content-1 ul {
     display: none;
   } */
@@ -242,9 +243,12 @@ li.sidebar-items > span:hover {
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   .nav-content-1 ul {
     display: none;
+  }
+  .navbar {
+    justify-content: space-around;
   }
 }
 /* footer*/
@@ -254,7 +258,7 @@ li.sidebar-items > span:hover {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 250px;
+  margin-top: 20px;
   /* flex-direction: row; */
   /* justify-content: space-evenly; */
   /* align-content: center; */
@@ -279,6 +283,34 @@ footer > ul > li {
 .footer-col-2 {
   margin: 5px;
   padding: 2px;
+}
+.newsletter {
+  /* background: red; */
+  text-align: center;
+  padding: 10px 0;
+  p {
+    padding-bottom: 20px;
+    font-size: 32px;
+  }
+  div {
+    margin: 10px;
+    font-size: 18px;
+  }
+  input {
+    border: 1px solid #336622;
+
+    padding: 10px;
+    width: 70%;
+    max-width: 420px;
+    border-radius: 5px 0 0 5px;
+  }
+  button {
+    padding: 10px;
+    background: #336622;
+    border: 1px solid #336622;
+    border-radius: 0 5px 5px 0;
+    color: white;
+  }
 }
 .fa-brands:hover {
   background: white;
