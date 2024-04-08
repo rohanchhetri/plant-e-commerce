@@ -199,18 +199,6 @@
           setInterval(scrollNext, 2000);
         };
       });
-
-      let validUser = localStorage.getItem("username");
-      let homeUser = document.querySelectorAll(".home_user");
-      let login = document.querySelectorAll(".isLogged");
-      if (validUser != null) {
-        for (let i = 0; i < homeUser.length; i++) {
-          homeUser[i].innerHTML = validUser.toUpperCase();
-        }
-        for (let i = 0; i < login.length; i++) {
-          login[i].innerHTML = "Sign Out";
-        }
-      }
     </script>
   </body>
 </html>

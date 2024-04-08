@@ -243,7 +243,7 @@ li.sidebar-items > span:hover {
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 852px) {
   .nav-content-1 ul {
     display: none;
   }

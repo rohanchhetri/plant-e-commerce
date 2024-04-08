@@ -78,19 +78,6 @@ let validPassword = () => {
     hideElement("error3");
   }
 };
-function hideElement(id) {
-  $(`#${id}`).css("display", "none");
-}
-function showElement(id) {
-  $(`#${id}`).css("display", "flex");
-}
-function toggleDisplay(id) {
-  if ($(`#${id}`).css("display") === "none") {
-    $(`#${id}`).css("display", "flex");
-  } else {
-    $(`#${id}`).css("display", "none");
-  }
-}
 
 // function to check if password and confirm password are same
 let passwordConfirmation = (event) => {
@@ -173,7 +160,7 @@ let getCode = (event) => {
   let enteredEmail = $(`#reset-email`).val();
   let storedUsername = localStorage.getItem("username");
   let enteredUsername = $(`#reset-username`).val();
-  if (enteredEmail === storedEmail && enteredUsername === storedUsername) {
+  if (enteredEmail === storedEmail) {
     generateOTP(event);
     event.preventDefault();
   } else {
@@ -202,6 +189,7 @@ const validateOTP = (event) => {
   let enteredOTP = $(`#reset-code`).val();
   if (enteredOTP === otp && enteredOTP !== "") {
     localStorage.removeItem("password");
+    localStorage.setItem("username", $(`#reset-username`).val());
     localStorage.setItem("password", $(`#reset-password`).val());
     alert("Password reset successful!!!");
     $(`#reset-form`).submit();

@@ -89,6 +89,30 @@
         cursor: pointer;
         background: #336622;
       }
+      .search-item {
+        /* background: rebeccapurple; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        min-width: 400px;
+        margin: 10px 0 20px 0;
+        div {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        input {
+          max-width: 500px;
+          width: 40%;
+          padding: 8px;
+          border-radius: 5px;
+          /* border: none; */
+          /* background: grey; */
+        }
+      }
     </style>
   </head>
   <body>
@@ -103,7 +127,21 @@
     >
       All Products
     </h1>
+
     <main style="display: flex; flex-direction: column; align-items: center">
+      <div class="search-item">
+        <div>
+          <input type="text" placeholder="Search-Plant" id="search-item" />
+          <span>
+            <label for="sort">sortBy:</label>
+            <select name="Hi" id="sort">
+              <option value="default" selected>Default</option>
+              <option value="price">Price</option>
+              <option value="name">Name</option>
+            </select></span
+          >
+        </div>
+      </div>
       <div class="productList">
         <div class="item">
           <img
@@ -128,6 +166,54 @@
     <script src="js/script.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/validation.js"></script>
-    <footer class="footer"></footer>
+    <script>
+      // Function to handle search and display products
+      const handleSearch = () => {
+        addItem();
+      };
+
+      // Event listener for search input field
+      document.querySelector("#search-item").addEventListener("keyup", (e) => {
+        if (e.keyCode === 13) {
+          e.preventDefault();
+          handleSearch();
+        }
+      });
+
+      // Function to display products
+      const addItem = () => {
+        // Get search term entered by the user
+        let search = document
+          .querySelector("#search-item")
+          .value.trim()
+          .toLowerCase();
+
+        // Filter products based on search term
+        let filteredProducts = productsList.filter((product) =>
+          product.name.toLowerCase().includes(search)
+        );
+
+        // Clear existing products
+        productsListHTML.innerHTML = "";
+
+        if (filteredProducts.length > 0) {
+          // Display filtered products
+          filteredProducts.forEach((product) => {
+            let newProduct = document.createElement("div");
+            newProduct.classList.add("item");
+            newProduct.innerHTML = `
+        <img src="${product.image}" alt="image of ${product.name}" />
+        <span class="productName">${product.name}</span>
+        <div class="price">$${product.price}</div>
+        <button class="addCart">Add To Cart</button>
+      `;
+            productsListHTML.appendChild(newProduct);
+          });
+        } else {
+          // Display message if no products found
+          productsListHTML.innerHTML = "<p>No matching products found</p>";
+        }
+      };
+    </script>
   </body>
 </html>

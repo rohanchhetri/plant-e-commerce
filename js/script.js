@@ -13,6 +13,21 @@ const getProducts = () => {
     });
 };
 getProducts();
+
+setInterval(() => {
+  document.getElementById("sort").addEventListener("change", function () {
+    var selectedOption = this.value;
+    // Call your function based on the selected option
+    if (selectedOption === "price") {
+      sortByPrice();
+    } else if (selectedOption === "name") {
+      sortByName();
+    } else {
+      sortDefault();
+    }
+  });
+}, 1000);
+
 const addProduct = () => {
   productsListHTML.innerHTML = "";
   if (productsList.length > 0) {
@@ -31,6 +46,25 @@ const addProduct = () => {
     });
   }
 };
+function sortByPrice() {
+  // Function to sort by price
+  productsList.sort((a, b) => a.price - b.price);
+  addProduct();
+}
+
+function sortByName() {
+  // Function to sort by name
+  productsList.sort((a, b) => {
+    let nameA = a.name.toUpperCase();
+    let nameB = b.name.toUpperCase();
+    return nameA.localeCompare(nameB);
+  });
+  addProduct();
+}
+function sortDefault() {
+  productsList.sort((a, b) => a.id - b.id);
+  addProduct();
+}
 
 const getCartList = () => {
   // Retrieve the productsList array from localStorage
@@ -228,13 +262,12 @@ let calculateTotal = () => {
 
 calculateTotal();
 
-$(".payment").click(function () {
+const clearITEM = () => {
   clearCartList();
   setInterval(() => {
     window.location.reload();
   }, 2000);
-});
-
+};
 // function to toggle paid message
 const showPaidMsg = () => {
   let msg = $(".paid");
@@ -244,3 +277,24 @@ const showPaidMsg = () => {
     msg.css("display", "flex");
   }
 };
+document.querySelector(".payment").addEventListener("click", play);
+
+// function to toggle visibility of password
+function play() {
+  if (document.querySelector(".table1").childElementCount <= 1) {
+    alert("Please add items to cart before payment");
+    window.location.href = "product.html";
+    return;
+  } else {
+    if (
+      localStorage.getItem("username") == null ||
+      localStorage.getItem("username") == "User"
+    ) {
+      alert("Please login to make payment");
+      window.location.href = "sign_in.html";
+    } else {
+      clearITEM();
+      showPaidMsg();
+    }
+  }
+}

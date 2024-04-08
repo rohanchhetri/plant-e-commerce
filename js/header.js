@@ -1,4 +1,5 @@
 let headers = document.querySelectorAll(".header");
+
 headers.forEach((header) => {
   header.innerHTML = `
       <nav class="navbar">
@@ -58,7 +59,7 @@ headers.forEach((header) => {
             <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
           </li>
 
-          <li class="sidebar-items" onclick="goToPage('sign_in.html')">
+          <li class="sidebar-items">
             <span class="isLogged">Login/Register</span>
             <i class="fa-solid fa-right-from-bracket sidebar-items-icons"></i>
           </li>
@@ -111,3 +112,50 @@ headers.forEach((header) => {
         </ul>
       </div>`;
 });
+// else {
+//   const addToCartButtons = document.querySelectorAll(".addCart");
+//   addToCartButtons.forEach((button) => {
+//     button.addEventListener("click", (btn) => {
+//       btn.preventDefault();
+//       window.location.href = "sign_in.html";
+//     });
+//   });
+// }
+
+//
+
+let validUser = localStorage.getItem("username");
+let homeUser = document.querySelectorAll(".home_user");
+let login = document.querySelectorAll(".isLogged");
+if (validUser != "" && validUser != "User") {
+  for (let i = 0; i < homeUser.length; i++) {
+    homeUser[i].innerHTML = validUser.toUpperCase();
+  }
+  for (let i = 0; i < login.length; i++) {
+    login[i].innerHTML = "Sign Out";
+  }
+}
+
+document.querySelectorAll(".isLogged").forEach((element) => {
+  element.addEventListener("click", () => {
+    if (validUser == "" || validUser == "User") {
+      window.location.href = "sign_in.html";
+    } else {
+      localStorage.setItem("username", "User");
+      window.location.href = "index.html";
+    }
+  });
+});
+function hideElement(id) {
+  $(`#${id}`).css("display", "none");
+}
+function showElement(id) {
+  $(`#${id}`).css("display", "flex");
+}
+function toggleDisplay(id) {
+  if ($(`#${id}`).css("display") === "none") {
+    $(`#${id}`).css("display", "flex");
+  } else {
+    $(`#${id}`).css("display", "none");
+  }
+}
