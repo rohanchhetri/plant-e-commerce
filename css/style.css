@@ -132,6 +132,12 @@ li.sidebar-items > span:hover {
   width: 70%;
   border-bottom: 1px solid #336622;
 }
+.sidebar-items2 > span:hover {
+  cursor: pointer;
+  color: #b8cf69;
+  transition: ease-in-out 0.2s;
+  text-decoration: underline;
+}
 .sidebar-items-icons {
   padding-left: 30px;
 }
@@ -205,30 +211,14 @@ li.sidebar-items > span:hover {
 .blog-section {
   width: 100%;
   display: flex;
-
+  padding: 0 8px;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  margin: 40px 0;
   flex-wrap: wrap;
 }
-.blog {
-  flex: 0 0 48%;
-}
-
-@media screen and (max-width: 1080px) {
-  .blog-section {
-    flex-direction: column;
-    height: 10%;
-    justify-content: center;
-  }
-  .blog {
-    height: 40px;
-  }
-}
 @media screen and (max-width: 928px) {
-  /* .nav-content-1 ul {
-    display: none;
-  } */
   .nav-content-2 ul {
     display: none;
   }
@@ -259,10 +249,6 @@ li.sidebar-items > span:hover {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 20px;
-  /* flex-direction: row; */
-  /* justify-content: space-evenly; */
-  /* align-content: center; */
-  /* flex-wrap: wrap; */
   gap: 10px;
 }
 .footer-content1,
@@ -284,16 +270,20 @@ footer > ul > li {
   margin: 5px;
   padding: 2px;
 }
+.footer-content2 > ul > span:hover,
+.footer-content3 > ul > span:hover {
+  cursor: pointer;
+}
+
 .newsletter {
-  /* background: red; */
   text-align: center;
   padding: 10px 0;
   p {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-size: 32px;
   }
   div {
-    margin: 10px;
+    margin: 08px;
     font-size: 18px;
   }
   input {

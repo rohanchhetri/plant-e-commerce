@@ -88,21 +88,16 @@ headers.forEach((header) => {
           </li>
 
           <li class="home_user">User</li>
-          <li class="sidebar-items2"><span>Home</span></li>
+          <li class="sidebar-items2"><span onclick="goToPage('index.html')">Home</span></li>
           <li class="sidebar-items2">
             <span onclick="goToPage('product.html')">Products</span>
           </li>
-          <li class="sidebar-items2"><span>Shop</span></li>
-          <li class="sidebar-items2"><span>About</span></li>
+          <li class="sidebar-items2"><span onclick="goToPage('about.html')">About</span></li>
           <li class="sidebar-items2" style="margin-bottom: 25px">
-            <span>Contact</span>
+            <span onclick="goToPage('contact.html')">Contact</span>
           </li>
-          <li class="sidebar-items">
-            <span> Wishlist</span>
-            <i class="fa-solid fa-heart sidebar-items-icons"></i>
-          </li>
-          <li class="sidebar-items">
-            <span onclick="goToPage('cart.html')">Cart</span>
+          <li class="sidebar-items" onclick="goToPage('cart.html')">
+            <span >Cart</span>
             <i class="fa-solid fa-cart-shopping sidebar-items-icons" ;></i>
           </li>
           <li class="sidebar-items" onclick="goToPage('sign_in.html')">
@@ -112,17 +107,6 @@ headers.forEach((header) => {
         </ul>
       </div>`;
 });
-// else {
-//   const addToCartButtons = document.querySelectorAll(".addCart");
-//   addToCartButtons.forEach((button) => {
-//     button.addEventListener("click", (btn) => {
-//       btn.preventDefault();
-//       window.location.href = "sign_in.html";
-//     });
-//   });
-// }
-
-//
 
 let validUser = localStorage.getItem("username");
 let homeUser = document.querySelectorAll(".home_user");

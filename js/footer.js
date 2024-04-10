@@ -1,7 +1,7 @@
 document.querySelectorAll(".footer").forEach((footer) => {
   footer.innerHTML = `
   <div class="newsletter">
-    <p>Newsletter</p>
+    <p>Get 15% OFF on your next Order</p>
     <div>
       Subscribe to our newsletter to get updates on our latest offers!
     </div>

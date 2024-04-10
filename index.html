@@ -65,6 +65,32 @@
         margin: 0;
         text-align: center;
       }
+      .blog {
+        /* height: auto; */
+        max-height: 400px;
+        min-height: 20vh;
+        /* gap: 20px; */
+        max-width: 40vw;
+        min-width: 460px;
+        width: auto;
+        overflow: hidden;
+
+        /* padding: 10px; */
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+        margin: 10px 0;
+        blockquote {
+          padding: 10px;
+          p {
+            font-weight: 500;
+          }
+        }
+        footer {
+          font-size: 16px;
+          color: grey;
+        }
+      }
     </style>
   </head>
   <body>
@@ -76,58 +102,51 @@
           <p>Beautiful plants that encourage your to get creative</p>
           <button class="btn shop-now">SHOP NOW</button>
         </div>
-        <!-- <div class="image-section">
-          <img src="/src/main-section-img.webp" alt="" width="100%" />
-        </div> -->
       </div>
       <p class="sub-head">Featured Products</p>
       <div class="featured-section">
         <div class="scroll-container" id="scrollContainer"></div>
       </div>
-      <!-- <div class="featured-section">
-        <div class="scroll-container" id="scrollContainer">
-          Images and titles from the array will be inserted here
+      <p class="sub-head">Recent Blogs</p>
+      <div class="blog-section">
+        <div class="blog" id="blog-1">
+          <img src="/src/blog1.jpeg" alt="" height="75%" width="100%" />
+          <blockquote>
+            <footer>April 05 - Rohan Chhetri</footer>
+            <p>
+              "How to water your freaking plants so they don't die after one
+              week ."
+            </p>
+          </blockquote>
         </div>
-      </div> -->
-      <!-- <div class="plant-categories" style="overflow: scroll;"></div> -->
-      <p class="sub-head">
-        Love and work are to people what water and sunshine are to plants
-      </p>
-      <!-- <div class="blog-section">
-        <div class="blog" id="blog-1" style="height: 250px">
-          <img
-            src="/src/interior-plant.jpg"
-            alt=""
-            height="180%"
-            width="100%"
-          />
-          <p>
-            How to water your freaking plants so they don't die afrer one week
-          </p>
+        <div class="blog" id="blog-1">
+          <img src="/src/blog2.jpeg" alt="" height="75%" width="100%" />
+          <blockquote>
+            <footer>April 05 - Rohan Chhetri</footer>
+            <p>
+              "How to repot a Monstera without killing it and foster its growth
+              ."
+            </p>
+          </blockquote>
         </div>
-        <div class="blog" id="blog-1" style="height: 250px">
-          <img
-            src="/src/interior-plant.jpg"
-            alt=""
-            height="180%"
-            width="100%"
-          />
-          <p>
-            How to water your freaking plants so they don't die afrer one week
-          </p>
+        <div class="blog" id="blog-1">
+          <img src="/src/blog3.jpeg" alt="" height="75%" width="100%" />
+          <blockquote>
+            <footer>April 05 - Rohan Chhetri</footer>
+            <p>"How Indoor Greenery Boosts Productivity and Well-being ."</p>
+          </blockquote>
         </div>
-      </div> -->
+      </div>
     </main>
     <footer class="footer"></footer>
-    <!-- <footer class="footer"></footer> -->
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script>
       let mainBG = [
         "/src/main_section_img2.jpg",
-        "/src/main_section_img3.jpg",
         "/src/main_section_img4.jpg",
         "/src/main_section_img5.jpg",
+        "/src/main_section_img1.jpg",
       ];
       let mainBGIndex = 0;
       let mainContent = document.querySelector(".main-content");

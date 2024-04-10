@@ -2,55 +2,55 @@
   {
     "id": "1",
     "name": "Basil",
-    "price": 3,
+    "price": 11.0,
     "image": "src/product_images/Basil.webp"
   },
   {
     "id": "2",
     "name": "Cactus",
-    "price": 7,
+    "price": 12.8,
     "image": "src/product_images/Cactus.webp"
   },
   {
     "id": "3",
     "name": "Chinese Evergreen",
-    "price": 8,
+    "price": 17,
     "image": "src/product_images/Chinese Evergreen.webp"
   },
   {
     "id": "4",
     "name": "Aloe Vera",
-    "price": 2,
+    "price": 12.0,
     "image": "src/product_images/Aloe Vera.webp"
   },
   {
     "id": "5",
     "name": "Bromeliads",
-    "price": 6,
+    "price": 15.7,
     "image": "src/product_images/Bromeliads.webp"
   },
   {
     "id": "6",
     "name": "Croton",
-    "price": 12,
+    "price": 16.04,
     "image": "src/product_images/Croton.webp"
   },
   {
     "id": "7",
     "name": "Dumb Cane Plant",
-    "price": 12,
+    "price": 12.33,
     "image": "src/product_images/Dumb Cane Plant.webp"
   },
   {
     "id": "8",
     "name": "English Ivy",
-    "price": 12,
+    "price": 16.29,
     "image": "src/product_images/English Ivy.webp"
   },
   {
     "id": "9",
     "name": "Fiddle Leaf Fig",
-    "price": 12,
+    "price": 12.81,
     "image": "src/product_images/Fiddle Leaf Fig.webp"
   },
   {
@@ -69,19 +69,19 @@
   {
     "id": "12",
     "name": "Jade Plant",
-    "price": 12,
+    "price": 11.02,
     "image": "src/product_images/Jade Plant.webp"
   },
   {
     "id": "13",
     "name": "Jasmine Plant",
-    "price": 12,
+    "price": 14.52,
     "image": "src/product_images/Jasmine Plant.webp"
   },
   {
     "id": "14",
     "name": "Bird's Nest Anthurium",
-    "price": 4,
+    "price": 10.4,
     "image": "src/product_images/Bird's Nest Anthurium.webp"
   },
   {
@@ -99,38 +99,38 @@
   {
     "id": "17",
     "name": "Money Tree",
-    "price": 12,
+    "price": 9.5,
     "image": "src/product_images/Money Tree.webp"
   },
   {
     "id": "18",
     "name": "Monstera Deliciosa",
-    "price": 12,
+    "price": 9.99,
     "image": "src/product_images/Monstera Deliciosa.webp"
   },
   {
     "id": "19",
     "name": "Moth Orchid",
-    "price": 12,
+    "price": 11.6,
     "image": "src/product_images/Moth Orchid.webp"
   },
 
   {
     "id": "20",
     "name": "Peace Lily",
-    "price": 12,
+    "price": 12.1,
     "image": "src/product_images/Peace Lily.webp"
   },
   {
     "id": "21",
     "name": "Homalomena Selby",
-    "price": 12,
+    "price": 17,
     "image": "src/product_images/Homalomena Selby.webp"
   },
   {
     "id": "22",
     "name": "African Violet",
-    "price": 1,
+    "price": 18.4,
     "image": "src/product_images/African Violet.webp"
   },
   {
@@ -142,13 +142,13 @@
   {
     "id": "24",
     "name": "Polka Dot Begonia",
-    "price": 12,
+    "price": 13.5,
     "image": "src/product_images/Polka Dot Begonia.webp"
   },
   {
     "id": "25",
     "name": "Spider Plant",
-    "price": 12,
+    "price": 11.09,
     "image": "src/product_images/Spider Plant.webp"
   },
   {
@@ -160,43 +160,43 @@
   {
     "id": "27",
     "name": "Snake Plant",
-    "price": 12,
+    "price": 11.6,
     "image": "src/product_images/Snake Plant.webp"
   },
   {
     "id": "28",
     "name": "Oyster Plant",
-    "price": 12,
+    "price": 13,
     "image": "src/product_images/Oyster Plant.webp"
   },
   {
     "id": "29",
     "name": "String of Pearls",
-    "price": 12,
+    "price": 16.99,
     "image": "src/product_images/String of Pearls.webp"
   },
   {
     "id": "30",
     "name": "ZZ Plant",
-    "price": 1,
+    "price": 18,
     "image": "src/product_images/ZZ Plant.webp"
   },
   {
     "id": "31",
     "name": "Sweetheart Plant",
-    "price": 12,
+    "price": 12.2,
     "image": "src/product_images/Sweetheart Plant.webp"
   },
   {
     "id": "32",
     "name": "Umbrella Plant",
-    "price": 12,
+    "price": 10,
     "image": "src/product_images/Umbrella Plant.webp"
   },
   {
     "id": "33",
     "name": "Boston Fern",
-    "price": 5,
+    "price": 15,
     "image": "src/product_images/Boston Fern.webp"
   }
 ]
